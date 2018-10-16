@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        /*腾讯X5 WebView*/
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    /*透明状态栏*/
+    api 'com.jaeger.statusbarutil:library:1.5.1'
+    //腾讯TBS X5内核WebView
+    api files('libs/tbs_sdk_thirdapp_v3.6.0.1310_43612_sharewithdownload_withoutGame_obfs_20180706_163319.jar')
+    /*网络请求*/
+    api 'io.reactivex.rxjava2:rxjava:2.1.16'//rxjava2
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'//rxandroid
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'//配合Rxjava 使用
+    api 'com.squareup.retrofit2:retrofit:2.4.0'//retrofit2
+    api 'com.squareup.okhttp3:logging-interceptor:3.5.0'//日志拦截器
+    api 'org.ligboy.retrofit2:converter-fastjson-android:2.1.0'//JSON解析器
+    api 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'//ConverterFactory的Gson:
+    api 'com.google.code.gson:gson:2.8.2'//gson解析
+    /*刷新加载*/
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-5'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-5'//没有使用特殊Header，可以不加这行
+    /*图片加载框架*/
+    api 'com.github.bumptech.glide:glide:3.7.0'
+    /*拍照、选择图片*/
+    api 'com.yanzhenjie:album:2.1.1'
+    /*EventBus*/
+    api 'org.greenrobot:eventbus:3.0.0'
+}
