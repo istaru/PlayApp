@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.moon.lib.R;
+import com.moon.lib.tools.LogUtils;
 import com.scwang.smartrefresh.layout.api.RefreshHeader;
 import com.scwang.smartrefresh.layout.api.RefreshKernel;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -66,10 +67,10 @@ public class RefreshHeaderView extends LinearLayout implements RefreshHeader {
 
     @Override
     public void onMoving(boolean isDragging, float percent, int offset, int height, int maxDragHeight) {
-        Log.e("onMoving", "percent:" + percent + "_offset" + offset + "_height" + height + "_maxDragHeight" + maxDragHeight);
+        LogUtils.t(LogUtils.TAG_INFO).e("onMoving", "percent:" + percent + "_offset" + offset + "_height" + height + "_maxDragHeight" + maxDragHeight);
         float scale = 1.0f * offset / height;
         scale = Math.min(scale, 1.0f);
-        Log.e("scare", scale + "");
+        LogUtils.t(LogUtils.TAG_INFO).e("scare", scale + "");
         imageView.setPivotY(height);
         imageView.setScaleX(scale);
         imageView.setScaleY(scale);
