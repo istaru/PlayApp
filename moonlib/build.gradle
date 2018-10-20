@@ -56,4 +56,7 @@ dependencies {
     api 'org.greenrobot:eventbus:3.0.0'
     /*权限管理*/
     api 'com.github.tbruyelle:rxpermissions:0.10.2'
+    /*ARouter*/
+    api 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.4.0'
 }
