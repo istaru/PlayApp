@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tasklistRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <!-- header -->
+    <RelativeLayout android:id="@+id/demo_relativeLayoutHeader"
+        android:layout_height="45dip" android:layout_width="match_parent"
+        android:background="@color/demo_head_bg">
+
+        <ImageView android:id="@+id/demo_btnBack"
+            android:src="@drawable/demo_ui_navigation_bar_back_indicator_default"
+            android:layout_gravity="center_vertical|left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:background="@drawable/demo_icon_clickable"
+            />
+
+        <TextView android:id="@+id/demo_action_bar_title"
+            android:layout_gravity="center_vertical|left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/demo_app_list_title"
+            android:paddingLeft="5dip"
+            android:textSize="15sp"
+            android:textColor="@android:color/white"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listViewTaskList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/demo_relativeLayoutHeader"
+        >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:gravity="center">
+
+        <ProgressBar android:id="@+id/emptyProgress"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginRight="6dip" />
+
+        <TextView android:id="@+id/emptyText" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:gravity="center" />
+
+    </LinearLayout>
+
+</RelativeLayout>
