@@ -18,7 +18,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mContext = this;
         setContentView(getLayoutId());
-        ButterKnife.bind(this);
+        ButterKnife.bind(mContext);
         initView();
         setTransparentStatusBar(0, null);
         setStatusBarImgColor(false);

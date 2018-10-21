@@ -5,23 +5,20 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.experience.moon.play.R;
 import com.experience.moon.play.tools.JsUtils;
-import com.moon.lib.tools.LogUtils;
 import com.moon.lib.view.web.X5WebView;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshLoadMoreListener;
 import com.tbruyelle.rxpermissions2.Permission;
 import com.tbruyelle.rxpermissions2.RxPermissions;
-import com.tencent.smtt.export.external.interfaces.SslError;
-import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
-import com.tencent.smtt.sdk.WebView;
-
 import butterknife.BindColor;
 import butterknife.BindView;
 import io.reactivex.functions.Consumer;
 
+@Route(path = "/activity/MainActivity")
 public class MainActivity extends BaseActivity implements OnRefreshLoadMoreListener {
 
     @BindColor(R.color.app_color)
@@ -41,22 +38,6 @@ public class MainActivity extends BaseActivity implements OnRefreshLoadMoreListe
         refreshLayout.setEnableRefresh(false);
         refreshLayout.setEnableLoadMore(false);
         webView.addJavascriptInterface(new JsUtils(MainActivity.this, webView), "native_android");
-        webView.setWebViewClient(new com.tencent.smtt.sdk.WebViewClient() {
-            @Override
-            public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-                sslErrorHandler.proceed();// 接受所有网站的证书
-            }
-
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView webView, String url) {
-                return super.shouldOverrideUrlLoading(webView, url);
-            }
-
-            @Override
-            public void onPageFinished(WebView webView, String s) {
-                super.onPageFinished(webView, s);
-            }
-        });
         getPermissions(Manifest.permission.READ_PHONE_STATE);
     }
 

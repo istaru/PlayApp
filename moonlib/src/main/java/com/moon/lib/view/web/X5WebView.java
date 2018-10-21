@@ -10,6 +10,8 @@ import android.webkit.WebViewClient;
 import com.moon.lib.R;
 import com.moon.lib.tools.BaseTools;
 import com.moon.lib.tools.Constants;
+import com.tencent.smtt.export.external.interfaces.SslError;
+import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
 import com.tencent.smtt.sdk.WebChromeClient;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
@@ -59,11 +61,27 @@ public class X5WebView extends WebView {
         //初始化进度条
         progressView = new ProgressView(context);
         progressView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (int) BaseTools.dpChangePx(2)));
-        progressView.setColor(ContextCompat.getColor(context, R.color.white));
+        progressView.setColor(ContextCompat.getColor(context, R.color.transparent));
         //把进度条加到Webview中
         addView(progressView);
         initWebSettings();
         setWebChromeClient(new MyWebCromeClient());
+        setWebViewClient(new com.tencent.smtt.sdk.WebViewClient(){
+            @Override
+            public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
+                sslErrorHandler.proceed();// 接受所有网站的证书
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView webView, String url) {
+                return super.shouldOverrideUrlLoading(webView, url);
+            }
+
+            @Override
+            public void onPageFinished(WebView webView, String s) {
+                super.onPageFinished(webView, s);
+            }
+        });
     }
 
     /**
