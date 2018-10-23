@@ -11,12 +11,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        /*ARouter*/
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [ moduleName : project.getName() ]
-            }
-        }
+//        /*ARouter*/
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [ moduleName : project.getName() ]
+//            }
+//        }
     }
     buildTypes {
         release {
@@ -38,7 +38,7 @@ dependencies {
     /*简写控件(必须要放到主model中)*/
     api 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    /*ARouter*/
-    implementation 'com.alibaba:arouter-api:1.1.1'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.1'
+//    /*ARouter*/
+//    implementation 'com.alibaba:arouter-api:1.4.0'
+//    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
 }

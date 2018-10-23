@@ -39,17 +39,14 @@ public class Transformer {
                         .map(new Function<T, T>() {
                             @Override
                             public T apply(T t) throws Exception {
-                                int code;
-                                String message;
-                                BaseEntity baseEntity = new Gson().fromJson(new Gson().toJson(t), BaseEntity.class);
-                                code = baseEntity.getCode();
-                                message = baseEntity.getMessage();
-                                if (code != 200) {
-                                    if(code == 402){
-
-                                    }
-                                    throw new ApiException(code, message);
-                                }
+//                                int code;
+//                                String message;
+//                                BaseResDto baseEntity = new Gson().fromJson(new Gson().toJson(t), BaseResDto.class);
+//                                code = baseEntity.code;
+//                                message = baseEntity.msg;
+//                                if (code != 200) {
+//                                    throw new ApiException(code, message);
+//                                }
                                 return t;
                             }
                         })

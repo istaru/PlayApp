@@ -28,7 +28,7 @@ public class Constants {
     public static String PHONE = "phoneNum";
     public static String USER_NAME = "userName";
     public static String USER_ICON = "userIcon";
-    public static String USER_ID = "accountId";
+    public static String USER_ID = "uid";
     public static String USER_PWD = "userPwd";
     public static String APR_NAME = "aprName";
     public static String NICK_NAME = "nickName";
@@ -51,6 +51,8 @@ public class Constants {
      * Android权限
      */
     public static final int PERMISSIONS_CODE = 101;
+    public static final int CODE_102 = 102;
+    public static final int CODE_200 = 200;
 
     /**
      * 获取手机唯一标识

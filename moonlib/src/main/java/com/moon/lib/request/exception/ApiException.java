@@ -6,29 +6,12 @@ package com.moon.lib.request.exception;
  */
 
 public class ApiException extends Exception {
-    private int code;
-    private String message;
+    public int code;
+    public String message;
 
     public ApiException(int code, String msg) {
         super(msg);
         this.code = code;
         this.message = msg;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 }
