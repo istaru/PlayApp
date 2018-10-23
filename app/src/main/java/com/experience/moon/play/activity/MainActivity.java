@@ -68,6 +68,39 @@ public class MainActivity extends BaseActivity implements OnRefreshLoadMoreListe
         webView.addJavascriptInterface(new JsUtils(MainActivity.this, webView), "native_android");
     }
 
+    /**
+     * 申请权限
+     * @param permission
+     */
+    private void getPermissions(String permission) {
+        RxPermissions rxPermissions = new RxPermissions(mContext);
+        rxPermissions
+                .requestEach(permission)
+                .subscribe(new Consumer<Permission>() {
+                    @Override
+                    public void accept(Permission permission) throws Exception {
+                        if (permission.granted) {//已获取权限
+                            if (TextUtils.equals(Manifest.permission.READ_PHONE_STATE, permission.name) &&
+                                    null == PrefShared.getString(mContext, Constants.USER_ID)) {
+                                sendPlid();
+                            }
+                            if (TextUtils.equals(Manifest.permission.WRITE_EXTERNAL_STORAGE, permission.name)) {
+                                webView.loadUrl("https://t.dijiadijia.com/dist/");
+                            } else {
+                                getPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                            }
+                        } else if (permission.shouldShowRequestPermissionRationale) {//已拒绝权限
+                            getPermissions(permission.name);
+                        } else {//拒绝权限请求,并不再询问
+
+                        }
+                    }
+                });
+    }
+
+    /**
+     * 激活接口
+     */
     private void activationUser() {
         PhoneInfo phoneInfo = new PhoneInfo(this);
         FirstReqDto reqDto = new FirstReqDto();
@@ -99,34 +132,8 @@ public class MainActivity extends BaseActivity implements OnRefreshLoadMoreListe
                 });
     }
 
-    private void getPermissions(String permission) {
-        RxPermissions rxPermissions = new RxPermissions(mContext);
-        rxPermissions
-                .requestEach(permission)
-                .subscribe(new Consumer<Permission>() {
-                    @Override
-                    public void accept(Permission permission) throws Exception {
-                        if (permission.granted) {//已获取权限
-                            if (TextUtils.equals(Manifest.permission.READ_PHONE_STATE, permission.name) &&
-                                    null == PrefShared.getString(mContext, Constants.USER_ID)) {
-                                sendPlid();
-                            }
-                            if (TextUtils.equals(Manifest.permission.WRITE_EXTERNAL_STORAGE, permission.name)) {
-                                webView.loadUrl("https://t.dijiadijia.com/dist/");
-                            } else {
-                                getPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                            }
-                        } else if (permission.shouldShowRequestPermissionRationale) {//已拒绝权限
-                            getPermissions(permission.name);
-                        } else {//拒绝权限请求,并不再询问
-
-                        }
-                    }
-                });
-    }
-
     /**
-     * 如果本地没有保存uId
+     * 进入App的接口
      */
     private void sendPlid() {
         PhoneInfo phoneInfo = new PhoneInfo(this);
