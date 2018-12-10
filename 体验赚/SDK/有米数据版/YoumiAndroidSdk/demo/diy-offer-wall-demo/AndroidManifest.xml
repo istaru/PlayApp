@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	package="com.youmi.android.diyofferwall"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:versionCode="830"
+	android:versionName="8.3.0" >
+	
+	<uses-sdk
+		android:minSdkVersion="14"
+		android:targetSdkVersion="25" />
+	
+	<application
+		android:allowBackup="true"
+		android:hardwareAccelerated="false"
+		android:icon="@drawable/ic_launcher"
+		android:label="@string/app_name"
+		android:largeHeap="true"
+		android:resizeableActivity="false"
+		android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+		tools:targetApi="n" >
+		
+		<!-- 注册本次demo中所用到的Activity -->
+		<activity
+			android:name=".PermissionCheckActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+			android:label="@string/app_name" >
+			<intent-filter >
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter >
+		</activity >
+		<activity
+			android:name=".MainActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+			android:label="@string/app_name" >
+		</activity >
+		<activity
+			android:name=".OfferWallAdListActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+			android:exported="false" >
+		</activity >
+		<activity
+			android:name=".OfferWallAdDetailActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+			android:exported="false" >
+		</activity >
+		<activity
+			android:name=".AddFansAdListActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+			android:exported="false" >
+		</activity >
+		<activity
+			android:name=".AddFansAdDetailActivity"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+			android:exported="false" >
+		</activity >
+		
+		<!-- 有米SDK为了兼容Android N应用间共享文件行为变更而需要配置的FileProvider-->
+		<provider
+			android:name="android.support.v4.content.FileProvider"
+			android:authorities="com.youmi.android.diyofferwall.fileProvider"
+			android:exported="false"
+			android:grantUriPermissions="true" >
+			
+			<meta-data
+				android:name="android.support.FILE_PROVIDER_PATHS"
+				android:resource="@xml/file_provider" />
+		</provider >
+		
+		<!-- google play 服务配置 需要引用google play的库 -->
+		<meta-data
+			android:name="com.google.android.gms.version"
+			android:value="@integer/google_play_services_version" />
+	</application >
+
+</manifest >

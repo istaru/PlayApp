@@ -1,7 +1,11 @@
 package com.experience.moon.play.application;
 
 //import com.alibaba.android.arouter.launcher.ARouter;
+
 import com.moon.lib.app.BaseApp;
+import com.moon.lib.tools.Constants;
+
+import cde.ewd.adw.AdManager;
 
 public class MainApplication extends BaseApp {
 
@@ -9,6 +13,14 @@ public class MainApplication extends BaseApp {
     public void onCreate() {
         super.onCreate();
 //        initARouter();
+        initYM();
+    }
+
+    /**
+     * 初始化有米
+     */
+    private void initYM() {
+        AdManager.getInstance(mContext).init(Constants.YOUMI_KEY, Constants.YOUMI_SECRET, true);
     }
 
 //    /**

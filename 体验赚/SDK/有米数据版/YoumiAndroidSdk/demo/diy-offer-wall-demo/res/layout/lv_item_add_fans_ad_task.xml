@@ -1,0 +1,80 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:descendantFocusability="blocksDescendants"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	>
+	
+	<ImageView
+		android:id="@+id/lvitem_iv_wechat_add_fens_icon"
+		android:layout_width="50dp"
+		android:layout_height="50dp"
+		android:layout_centerVertical="true"
+		android:layout_marginRight="8dp"
+		android:src="@drawable/icon"
+		/>
+	
+	<TextView
+		android:id="@+id/lvitem_tv_wechat_add_fens_points"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentRight="true"
+		android:layout_centerVertical="true"
+		android:text="积分"
+		android:textAppearance="?android:textAppearanceLarge"
+		android:textColor="#df123d"
+		/>
+	
+	<TextView
+		android:id="@+id/lvitem_tv_wechat_add_fens_name"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_toLeftOf="@id/lvitem_tv_wechat_add_fens_points"
+		android:layout_toRightOf="@id/lvitem_iv_wechat_add_fens_icon"
+		android:text="应用名字"
+		android:textAppearance="?android:textAppearanceMedium"
+		android:textColor="#149CF3"
+		/>
+	
+	<TextView
+		android:id="@+id/lvitem_tv_wechat_add_fens_ad_text"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/lvitem_tv_wechat_add_fens_name"
+		android:layout_toLeftOf="@id/lvitem_tv_wechat_add_fens_points"
+		android:layout_toRightOf="@id/lvitem_iv_wechat_add_fens_icon"
+		android:text="任务描述"
+		android:textAppearance="?android:textAppearanceSmall"
+		android:textColor="#555555"
+		/>
+	
+	<TextView
+		android:id="@+id/lvitem_tv_wechat_add_fens_reward_counts"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/lvitem_tv_wechat_add_fens_ad_text"
+		android:layout_toLeftOf="@id/lvitem_tv_wechat_add_fens_points"
+		android:layout_toRightOf="@id/lvitem_iv_wechat_add_fens_icon"
+		android:text="今天已经获取到奖励的人数"
+		android:textAppearance="?android:textAppearanceSmall"
+		android:textColor="#999999"
+		/>
+	
+	<TextView
+		android:id="@+id/lvitem_tv_wechat_add_fens_status"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/lvitem_tv_wechat_add_fens_reward_counts"
+		android:layout_toLeftOf="@id/lvitem_tv_wechat_add_fens_points"
+		android:layout_toRightOf="@id/lvitem_iv_wechat_add_fens_icon"
+		android:text="任务状态"
+		android:textAppearance="?android:textAppearanceSmall"
+		android:textColor="#189d0a"
+		/>
+
+</RelativeLayout >

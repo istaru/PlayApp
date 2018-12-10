@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>更新说明 &#8212; Youmi Android SDK Document v8.3.0 文档</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'v8.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          有米广告 Android SDK 文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>v8.3.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="有米AndroidSDK积分管理及相关功能.html">积分管理及相关功能</a></li>
+                <li><a href="有米AndroidSDK实用工具.html">实用工具</a></li>
+                <li><a href="有米AndroidSDK常见问题.html">常见问题</a></li>
+                <li><a href="#">更新说明</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">更新说明</a><ul>
+<li><a class="reference internal" href="#chap-1">一、积分墙</a><ul>
+<li><a class="reference internal" href="#v8-2-1">v8.2.1</a></li>
+<li><a class="reference internal" href="#v7-6-0">v7.6.0</a></li>
+<li><a class="reference internal" href="#v7-5-0">v7.5.0</a></li>
+<li><a class="reference internal" href="#v7-4-0">v7.4.0</a></li>
+<li><a class="reference internal" href="#v7-3-1">v7.3.1</a></li>
+<li><a class="reference internal" href="#v7-3-0">v7.3.0</a></li>
+<li><a class="reference internal" href="#v7-2-1">v7.2.1</a></li>
+<li><a class="reference internal" href="#v7-2-0">v7.2.0</a></li>
+<li><a class="reference internal" href="#v7-1-0">v7.1.0</a></li>
+<li><a class="reference internal" href="#v7-0-1">v7.0.1</a></li>
+<li><a class="reference internal" href="#v7-0-0">v7.0.0</a></li>
+<li><a class="reference internal" href="#v6-5-0">v6.5.0</a></li>
+<li><a class="reference internal" href="#v6-4-4">v6.4.4</a></li>
+<li><a class="reference internal" href="#v6-4-3">v6.4.3</a></li>
+<li><a class="reference internal" href="#v6-4-1">v6.4.1</a></li>
+<li><a class="reference internal" href="#v6-4-0">v6.4.0</a></li>
+<li><a class="reference internal" href="#v6-3-1">v6.3.1</a></li>
+<li><a class="reference internal" href="#v6-3-0">v6.3.0</a></li>
+<li><a class="reference internal" href="#v6-2-0">v6.2.0</a></li>
+<li><a class="reference internal" href="#v6-1-0">v6.1.0</a></li>
+<li><a class="reference internal" href="#v6-0-0">v6.0.0</a></li>
+<li><a class="reference internal" href="#v5-5-1">v5.5.1</a></li>
+<li><a class="reference internal" href="#v5-5-0">v5.5.0</a></li>
+<li><a class="reference internal" href="#v5-3-3">v5.3.3</a></li>
+<li><a class="reference internal" href="#v5-3-2">v5.3.2</a></li>
+<li><a class="reference internal" href="#v5-3-1">v5.3.1</a></li>
+<li><a class="reference internal" href="#v5-3-0">v5.3.0</a></li>
+<li><a class="reference internal" href="#v5-1-3">v5.1.3</a></li>
+<li><a class="reference internal" href="#v5-1-2">v5.1.2</a></li>
+<li><a class="reference internal" href="#v5-1-0">v5.1.0</a></li>
+<li><a class="reference internal" href="#v5-0-0">v5.0.0</a></li>
+<li><a class="reference internal" href="#v4-10">v4.10</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chap-2">二、无积分</a><ul>
+<li><a class="reference internal" href="#id18">v8.2.1</a></li>
+<li><a class="reference internal" href="#id19">v7.5.0</a></li>
+<li><a class="reference internal" href="#id20">v7.4.0</a></li>
+<li><a class="reference internal" href="#id21">v7.3.0</a></li>
+<li><a class="reference internal" href="#id22">v7.2.1</a></li>
+<li><a class="reference internal" href="#id23">v7.2.0</a></li>
+<li><a class="reference internal" href="#id24">v7.1.0</a></li>
+<li><a class="reference internal" href="#id26">v7.0.1</a></li>
+<li><a class="reference internal" href="#id27">v7.0.0</a></li>
+<li><a class="reference internal" href="#id29">v6.4.0</a></li>
+<li><a class="reference internal" href="#v6-3-2">v6.3.2</a></li>
+<li><a class="reference internal" href="#id31">v6.3.1</a></li>
+<li><a class="reference internal" href="#id32">v6.3.0</a></li>
+<li><a class="reference internal" href="#v6-2-2">v6.2.2</a></li>
+<li><a class="reference internal" href="#v6-2-1">v6.2.1</a></li>
+<li><a class="reference internal" href="#id33">v6.2.0</a></li>
+<li><a class="reference internal" href="#id37">v6.1.0</a></li>
+<li><a class="reference internal" href="#id41">v6.0.0</a></li>
+<li><a class="reference internal" href="#id42">v5.3.1</a></li>
+<li><a class="reference internal" href="#id43">v5.3.0</a></li>
+<li><a class="reference internal" href="#v5-1-1">v5.1.1</a></li>
+<li><a class="reference internal" href="#id44">v5.1.0</a></li>
+<li><a class="reference internal" href="#id45">v5.0.0</a></li>
+<li><a class="reference internal" href="#id46">v4.10</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#chap-3">三、积分墙源数据版</a><ul>
+<li><a class="reference internal" href="#id48">v8.2.1</a></li>
+<li><a class="reference internal" href="#id49">v7.6.0</a></li>
+<li><a class="reference internal" href="#v7-5-1">v7.5.1</a></li>
+<li><a class="reference internal" href="#id50">v7.5.0</a></li>
+<li><a class="reference internal" href="#id51">v7.4.0</a></li>
+<li><a class="reference internal" href="#id52">v7.3.1</a></li>
+<li><a class="reference internal" href="#id53">v7.3.0</a></li>
+<li><a class="reference internal" href="#id54">v7.2.1</a></li>
+<li><a class="reference internal" href="#id55">v7.2.0</a></li>
+<li><a class="reference internal" href="#id57">v7.1.0</a></li>
+<li><a class="reference internal" href="#id59">v7.0.1</a></li>
+<li><a class="reference internal" href="#id60">v7.0.0</a></li>
+<li><a class="reference internal" href="#id62">v6.5.0</a></li>
+<li><a class="reference internal" href="#id64">v6.4.4</a></li>
+<li><a class="reference internal" href="#id65">v6.4.3</a></li>
+<li><a class="reference internal" href="#id67">v6.4.1</a></li>
+<li><a class="reference internal" href="#id68">v6.4.0</a></li>
+<li><a class="reference internal" href="#id77">v6.2.0</a></li>
+<li><a class="reference internal" href="#id79">v6.1.0</a></li>
+<li><a class="reference internal" href="#id80">v6.0.0</a></li>
+<li><a class="reference internal" href="#id81">v5.5.1</a></li>
+<li><a class="reference internal" href="#id82">v5.5.0</a></li>
+<li><a class="reference internal" href="#id87">v5.3.3</a></li>
+<li><a class="reference internal" href="#id88">v5.3.2</a></li>
+<li><a class="reference internal" href="#id90">v5.3.1</a></li>
+<li><a class="reference internal" href="#id91">v5.3.0</a></li>
+<li><a class="reference internal" href="#id96">v5.1.3</a></li>
+<li><a class="reference internal" href="#id97">v5.1.2</a></li>
+<li><a class="reference internal" href="#id98">v5.1.0</a></li>
+<li><a class="reference internal" href="#id99">v5.0.0</a></li>
+<li><a class="reference internal" href="#id100">v4.10</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="id1">
+<h1>更新说明<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="chap-1">
+<span id="id2"></span><h2>一、积分墙<a class="headerlink" href="#chap-1" title="永久链接至标题">¶</a></h2>
+<div class="section" id="v8-2-1">
+<h3>v8.2.1<a class="headerlink" href="#v8-2-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复一些已知问题。</li>
+</ol>
+</div>
+<div class="section" id="v7-6-0">
+<h3>v7.6.0<a class="headerlink" href="#v7-6-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>微信公众号加粉支持二维码方式。</li>
+</ol>
+</div>
+<div class="section" id="v7-5-0">
+<h3>v7.5.0<a class="headerlink" href="#v7-5-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化SDK</li>
+</ol>
+</div>
+<div class="section" id="v7-4-0">
+<h3>v7.4.0<a class="headerlink" href="#v7-4-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>重新支持微信加粉广告</li>
+<li>将不再支持分享广告，请开发者及时移除分享广告相关代码</li>
+</ol>
+</div>
+<div class="section" id="v7-3-1">
+<h3>v7.3.1<a class="headerlink" href="#v7-3-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复已知问题</li>
+</ol>
+</div>
+<div class="section" id="v7-3-0">
+<h3>v7.3.0<a class="headerlink" href="#v7-3-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>以AAR方式嵌入SDK，减少开发者的配置</li>
+<li>不再支持微信加粉广告，请开发者执行移除相关代码</li>
+</ol>
+</div>
+<div class="section" id="v7-2-1">
+<h3>v7.2.1<a class="headerlink" href="#v7-2-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>内部逻辑更新</li>
+</ol>
+</div>
+<div class="section" id="v7-2-0">
+<h3>v7.2.0<a class="headerlink" href="#v7-2-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增微信加粉广告，开发者只需更换sdk即可</li>
+</ol>
+</div>
+<div class="section" id="v7-1-0">
+<h3>v7.1.0<a class="headerlink" href="#v7-1-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>API变更：<a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 取消测试模式的设置，应用审核通过后如需请求测试广告，请到 <a class="reference external" href="https://app.youmi.net/apps/setting">有米后台-应用中心-广告设置-测试设备设置</a> 进行设置</li>
+</ol>
+</div>
+<div class="section" id="v7-0-1">
+<h3>v7.0.1<a class="headerlink" href="#v7-0-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复序列化警告提示</li>
+</ol>
+</div>
+<div class="section" id="v7-0-0">
+<h3>v7.0.0<a class="headerlink" href="#v7-0-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>兼容Android 7.0系统，嵌入时注意:</dt>
+<dd><ol class="first last arabic">
+<li><a class="reference external" href="有米AndroidSDK积分墙开发者文档.html#chap-2">有米的组件配置</a> 的更新说明</li>
+<li>有米的 <a class="reference external" href="有米AndroidSDK积分墙开发者文档.html#chap-2">Activity组件AVF暂不支持多窗口</a> ，开发者需要显示声明该Activity不能使用分屏和自由模式</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>修复覆盖更新部分版本sdk后，新sdk可能没法生效的问题</li>
+</ol>
+</div>
+<div class="section" id="v6-5-0">
+<h3>v6.5.0<a class="headerlink" href="#v6-5-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增动态链接库， <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-1">导入有米sdk</a> 时请注意加入</li>
+</ol>
+</div>
+<div class="section" id="v6-4-4">
+<h3>v6.4.4<a class="headerlink" href="#v6-4-4" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复MIUI系统上可能出现的crash</li>
+</ol>
+</div>
+<div class="section" id="v6-4-3">
+<h3>v6.4.3<a class="headerlink" href="#v6-4-3" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="有米AndroidSDK积分墙开发者文档.html#chap-2">安装注册监听BroadcastReceiver可以不用配置在AndroidManifest.xml</a></li>
+</ol>
+</div>
+<div class="section" id="v6-4-1">
+<h3>v6.4.1<a class="headerlink" href="#v6-4-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>移除地理位置，基站相关信息的获取，开发者不用在为有米sdk配置权限 <code class="docutils literal"><span class="pre">ACCESS_FINE_LOCATION</span></code></li>
+</ol>
+</div>
+<div class="section" id="v6-4-0">
+<h3>v6.4.0<a class="headerlink" href="#v6-4-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>部分广告验证码流程</li>
+</ol>
+</div>
+<div class="section" id="v6-3-1">
+<h3>v6.3.1<a class="headerlink" href="#v6-3-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复部分努比亚手机上，没法完成积分墙任务的问题</li>
+</ol>
+</div>
+<div class="section" id="v6-3-0">
+<h3>v6.3.0<a class="headerlink" href="#v6-3-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><strong>有米SDK不用再设置</strong> <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-4">混淆配置</a></li>
+<li>有米的所有API方法必须在 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 之后调用才能成功生效</li>
+<li>移除原有设置有米DebugLog是否输出的方法（<code class="docutils literal"><span class="pre">setEnableDebugLog(boolean)</span></code>），改为在 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 中设置</li>
+<li>移除积分管理中，客户端回调通过Receiver方式来监听积分订单到账通知的使用方法，如果开发者之前使用该方法进行监听，请改为使用 <a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-3">通过实现接口的方式来监听积分订单到账通知</a></li>
+<li>优化sdk体积大小</li>
+</ol>
+</div>
+<div class="section" id="v6-2-0">
+<h3>v6.2.0<a class="headerlink" href="#v6-2-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>sdk嵌入方式有变动，详细请看 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-1">有米AndroidSDK通用基本配置文档</a></li>
+<li>和小米游戏中心达成合作，开发者上传发布应用/游戏到小米游戏中心时，完成一些 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-6-1">额外嵌入工作</a> 即可顺利通过审核</li>
+<li><dl class="first docutils">
+<dt>以下功能的api发生变更，从静态方法改动为非静态方法</dt>
+<dd><ul class="first last">
+<li>配置积分墙/分享任务样式</li>
+<li>广告默认通知栏提示配置开关</li>
+<li>客户端管理积分下的积分通知开关配置</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="v6-1-0">
+<h3>v6.1.0<a class="headerlink" href="#v6-1-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化积分墙任务体验流程</li>
+<li>兼容MIUI系统上，广告部分任务流程提示语没法显示的问题</li>
+</ol>
+</div>
+<div class="section" id="v6-0-0">
+<h3>v6.0.0<a class="headerlink" href="#v6-0-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>兼容Android 6.0系统</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>当您的应用运行在Android 6.0（<code class="docutils literal"><span class="pre">api</span> <span class="pre">23</span></code>）系统以上时，需要在使用有米积分墙之前，必须确保用户允许程序拥有以下权限（具体实现可以参照Demo）：</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">READ_PHONE_STATE</span></code>：</li>
+<li><code class="docutils literal"><span class="pre">WRITE_EXTERNAL_STORAGE</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>不再兼容2.3以下系统， <code class="docutils literal"><span class="pre">minSdkVersion</span></code> 提高至9</li>
+<li>改进追加任务的用户体验流程</li>
+<li>其他优化</li>
+</ol>
+</div>
+<div class="section" id="v5-5-1">
+<h3>v5.5.1<a class="headerlink" href="#v5-5-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复特殊情况下可能没法下载广告的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-5-0">
+<h3>v5.5.0<a class="headerlink" href="#v5-5-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic">
+<li><p class="first">新增快速任务</p>
+</li>
+<li><p class="first">修复积分墙偶尔没法打开的问题</p>
+</li>
+<li><p class="first">修复完成任务回到积分墙后，积分墙出现空白页的问题</p>
+</li>
+<li><p class="first">UI改版</p>
+</li>
+<li><p class="first">其他优化</p>
+</li>
+<li><dl class="first docutils">
+<dt>API变更：</dt>
+<dd><ol class="first last arabic">
+<li><dl class="first docutils">
+<dt><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-3">设置服务器回调</a> 方法修改如下：</dt>
+<dd><div class="first last line-block">
+<div class="line"><code class="docutils literal"><span class="pre">OffersManager.setUsingServerCallBack(true);</span></code> <strong>-&gt;</strong></div>
+<div class="line"><code class="docutils literal"><span class="pre">OffersManager.getInstance(Context</span> <span class="pre">context).setUsingServerCallBack(true);</span></code></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="v5-3-3">
+<h3>v5.3.3<a class="headerlink" href="#v5-3-3" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>再次修复部分机型上无法完成任务的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-3-2">
+<h3>v5.3.2<a class="headerlink" href="#v5-3-2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>修复部分机型上无法完成任务的问题</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-2">权限配置</a> 发生变更</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="v5-3-1">
+<h3>v5.3.1<a class="headerlink" href="#v5-3-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>积分墙支持Android 5.1.0系统</li>
+<li>修复分享任务偶尔出现无法分享的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-3-0">
+<h3>v5.3.0<a class="headerlink" href="#v5-3-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增 <a class="reference external" href="有米AndroidSDK分享任务开发者文档.html#chap-ow-cn-3">分享任务</a> ，一次分享，坐拥无限收益</li>
+<li><dl class="first docutils">
+<dt>自本版本起，SDK将不再支持下面用户数据统计功能api，旧版sdk仍可以继续使用</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">AdManager.getInstance(Context</span> <span class="pre">context).setUserDataCollect(true);</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>客户端积分托管系统，积分使用类型由 <code class="docutils literal"><span class="pre">int</span></code> -&gt; <code class="docutils literal"><span class="pre">float</span></code>, 受影响接口如下:</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2">客户端积分管理接口</a></li>
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-2">积分余额变动通知</a></li>
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-3-3-2">客户端获取积分订单信息中的积分订单模型</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>其他bug修复</li>
+</ol>
+</div>
+<div class="section" id="v5-1-3">
+<h3>v5.1.3<a class="headerlink" href="#v5-1-3" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复部分机型上或某些情况下无法展示积分墙的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-1-2">
+<h3>v5.1.2<a class="headerlink" href="#v5-1-2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复SDK在Android 5.1.0系统上使用通知栏会导致系统界面崩溃的问题</li>
+</ol>
+</div>
+<div class="section" id="v5-1-0">
+<h3>v5.1.0<a class="headerlink" href="#v5-1-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>积分墙支持Android 5.0系统</li>
+<li>优化广告状态显示问题</li>
+<li>提高积分获取成功率</li>
+<li>其他优化及修复已知bug</li>
+</ol>
+</div>
+<div class="section" id="v5-0-0">
+<h3>v5.0.0<a class="headerlink" href="#v5-0-0" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化积分墙加载速度</li>
+<li>支持积分墙下拉刷新、双击标题刷新</li>
+<li>取消主动开启积分墙测试模式</li>
+<li>支持定制积分墙部分界面</li>
+<li>提供全屏积分墙退出监听接口</li>
+<li>新增在线时间检查功能</li>
+<li>简化权限配置</li>
+<li>提高积分获取成功率</li>
+<li>优化用户数据统计功能</li>
+</ol>
+</div>
+<div class="section" id="v4-10">
+<h3>v4.10<a class="headerlink" href="#v4-10" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>SDK 不再支持积分广告条、积分插播</li>
+<li>简化积分墙 AndroidManifest.xml 的配置</li>
+<li>优化改进本地积分防刷处理</li>
+<li>优化改进积分获取</li>
+<li>优化广告精准投放机制</li>
+<li>优化改进服务器回调使用</li>
+<li>解决部分机型不能上积分墙的问题</li>
+<li>新增通知栏提示配置开关</li>
+<li>提供新的渠道号设置方法</li>
+<li>提供新的客户端监听积分订单赚取接口</li>
+<li>其他优化及修复已知bug</li>
+</ol>
+</div>
+</div>
+<div class="section" id="chap-2">
+<span id="id17"></span><h2>二、无积分<a class="headerlink" href="#chap-2" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id18">
+<h3>v8.2.1<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复一些已知问题。</li>
+</ol>
+</div>
+<div class="section" id="id19">
+<h3>v7.5.0<a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+<p>不再支持广告条广告，请开发者及时移除相关代码。</p>
+</div>
+<div class="section" id="id20">
+<h3>v7.4.0<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>由于采用aar形式嵌入，移除检查组件的接口</li>
+<li>优化广告条</li>
+<li>开屏、插屏添加请求广告接口</li>
+<li>插屏支持动态修改图片类型</li>
+<li>请求视频广告接口添加回调</li>
+<li>修复视频播放过程中手机熄屏重新解锁后不会继续播放的问题</li>
+<li>其他优化</li>
+</ol>
+</div>
+<div class="section" id="id21">
+<h3>v7.3.0<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化SDK</li>
+</ol>
+</div>
+<div class="section" id="id22">
+<h3>v7.2.1<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复已知问题</li>
+</ol>
+</div>
+<div class="section" id="id23">
+<h3>v7.2.0<a class="headerlink" href="#id23" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>以AAR方式嵌入SDK，减少开发者的配置</li>
+</ol>
+</div>
+<div class="section" id="id24">
+<h3>v7.1.0<a class="headerlink" href="#id24" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>API变更：<a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 取消测试模式的设置</li>
+</ol>
+</div>
+<div class="section" id="id26">
+<h3>v7.0.1<a class="headerlink" href="#id26" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复已知问题</li>
+</ol>
+</div>
+<div class="section" id="id27">
+<h3>v7.0.0<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>兼容Android 7.0系统，嵌入时注意:</dt>
+<dd><ol class="first last arabic">
+<li><a class="reference external" href="有米AndroidSDK无积分广告开发者文档.html#chap-2-2-2">有米的组件配置需要添加FileProvider组件</a></li>
+<li>有米的视频播放 <a class="reference external" href="有米AndroidSDK无积分广告开发者文档.html#chap-3-3-1-1">Activity组件VideoActivity暂不支持多窗口</a>，开发者需要显示声明该Activity不能使用分屏和自由模式</li>
+<li>原生视频添加两个生命周期方法，具体查看文档以及Demo</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><a class="reference external" href="有米AndroidSDK无积分广告开发者文档.html#chap-3-1-1-2">开屏恢复展示失败是否自动跳转的接口</a></li>
+<li>开屏，插屏，视频广告添加应用退出接口，用于释放资源，具体查看文档以及Demo</li>
+<li>广告条增加一个生命周期方法，具体查看文档以及Demo</li>
+</ol>
+</div>
+<div class="section" id="id29">
+<h3>v6.4.0<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增动态链接库， <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-1">导入有米sdk</a> 时请注意加入</li>
+</ol>
+</div>
+<div class="section" id="v6-3-2">
+<h3>v6.3.2<a class="headerlink" href="#v6-3-2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复横屏状态下插屏关闭按钮较小的问题</li>
+</ol>
+</div>
+<div class="section" id="id31">
+<h3>v6.3.1<a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化开屏</li>
+<li>修复已知Bug</li>
+</ol>
+</div>
+<div class="section" id="id32">
+<h3>v6.3.0<a class="headerlink" href="#id32" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>添加隐私声明与广告标识</li>
+<li>新增轮播插屏广告</li>
+<li>修改插屏UI，去除倒计时显示设置接口跟关闭按钮显示设置接口</li>
+<li>修改视频播放界面UI，去除关闭按钮显示设置接口</li>
+</ol>
+</div>
+<div class="section" id="v6-2-2">
+<h3>v6.2.2<a class="headerlink" href="#v6-2-2" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>移除地理位置，基站相关信息的获取</li>
+</ol>
+</div>
+<div class="section" id="v6-2-1">
+<h3>v6.2.1<a class="headerlink" href="#v6-2-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复Banner在移动网络下的显示异常问题</li>
+<li>修复开屏无法设置显示关闭按钮问题</li>
+</ol>
+</div>
+<div class="section" id="id33">
+<h3>v6.2.0<a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><strong>有米SDK不用再设置</strong> <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-4">混淆配置</a></li>
+<li>有米的所有API方法必须在 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 之后调用才能成功生效</li>
+<li>移除原有设置有米DebugLog是否输出的方法（<code class="docutils literal"><span class="pre">setEnableDebugLog(boolean)</span></code>），改为在 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 中设置</li>
+</ol>
+</div>
+<div class="section" id="id37">
+<h3>v6.1.0<a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>sdk嵌入方式有变动，详细请看 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-1">有米AndroidSDK通用基本配置文档</a></li>
+<li>和小米游戏中心达成合作，开发者上传发布应用/游戏到小米游戏中心时，完成一些 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-6-1">额外嵌入工作</a> 即可顺利通过审核</li>
+<li>插屏 <strong>废弃预加载接口</strong>，开发者只需直接调用展示接口来完成展示</li>
+<li>Banner API 有更改，具体请看 <a class="reference external" href="有米AndroidSDK无积分广告开发者文档.html#chap-2">广告条调用</a></li>
+</ol>
+</div>
+<div class="section" id="id41">
+<h3>v6.0.0<a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>兼容Android 6.0系统</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>当您的应用运行在Android 6.0（<code class="docutils literal"><span class="pre">api</span> <span class="pre">23</span></code>）系统以上时，需要在使用有米无积分之前，必须确保用户允许程序拥有以下权限（具体实现可以参照Demo）：</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">READ_PHONE_STATE</span></code>：</li>
+<li><code class="docutils literal"><span class="pre">WRITE_EXTERNAL_STORAGE</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>不再兼容2.3以下系统， <code class="docutils literal"><span class="pre">minSdkVersion</span></code> 提高至9</li>
+<li>视频广告服务器回调增加 <code class="docutils literal"><span class="pre">setUserId(String</span> <span class="pre">useId)</span></code> 方法</li>
+</ol>
+</div>
+<div class="section" id="id42">
+<h3>v5.3.1<a class="headerlink" href="#id42" title="永久链接至标题">¶</a></h3>
+<p>1.修复视频下载失败无回调问题</p>
+</div>
+<div class="section" id="id43">
+<h3>v5.3.0<a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h3>
+<p>1.修复已知的Bug</p>
+</div>
+<div class="section" id="v5-1-1">
+<h3>v5.1.1<a class="headerlink" href="#v5-1-1" title="永久链接至标题">¶</a></h3>
+<p>1.优化开屏广告
+2.开屏广告和插屏广告加载改为即时请求
+3.增加插屏广告数量
+4.修复一些已知的Bug</p>
+</div>
+<div class="section" id="id44">
+<h3>v5.1.0<a class="headerlink" href="#id44" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>整合视频广告</li>
+<li>优化视频广告</li>
+<li>其他优化以及修复已知bug</li>
+</ol>
+</div>
+<div class="section" id="id45">
+<h3>v5.0.0<a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>增加开屏广告模式。</li>
+<li>插屏广告从网页版改为native版。</li>
+<li>增加插屏展示动画效果。</li>
+<li>插屏展示时间间隔从SDK控制改为后台控制。</li>
+<li>插屏展示模式改为即使模式（即广告资源没有加载完成时会直接返回失败而不是延迟弹出）</li>
+<li>去除自定义广告模式</li>
+</ol>
+</div>
+<div class="section" id="id46">
+<h3>v4.10<a class="headerlink" href="#id46" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增支持横屏应用的插屏形式</li>
+<li>调整安卓插屏加载机制，提升插屏展示性能</li>
+</ol>
+</div>
+</div>
+<div class="section" id="chap-3">
+<span id="id47"></span><h2>三、积分墙源数据版<a class="headerlink" href="#chap-3" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id48">
+<h3>v8.2.1<a class="headerlink" href="#id48" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复一些已知问题。</li>
+</ol>
+</div>
+<div class="section" id="id49">
+<h3>v7.6.0<a class="headerlink" href="#id49" title="永久链接至标题">¶</a></h3>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">原有加粉广告的相关接口已经废弃，请使用新接口，原有的接口将在 9.0.0 版本进行移除。</p>
+</div>
+<ol class="arabic simple">
+<li>新增加粉广告，包括微信公众号、微信小程序、微信个人号。</li>
+</ol>
+</div>
+<div class="section" id="v7-5-1">
+<h3>v7.5.1<a class="headerlink" href="#v7-5-1" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复没有网络的情况下，广告请求的回调还是回调在请求成功回调方法的问题</li>
+</ol>
+</div>
+<div class="section" id="id50">
+<h3>v7.5.0<a class="headerlink" href="#id50" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化SDK</li>
+</ol>
+</div>
+<div class="section" id="id51">
+<h3>v7.4.0<a class="headerlink" href="#id51" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>重新支持微信加粉广告</li>
+<li>将不再支持分享广告，请开发者及时移除分享广告相关代码</li>
+</ol>
+</div>
+<div class="section" id="id52">
+<h3>v7.3.1<a class="headerlink" href="#id52" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复已知问题</li>
+</ol>
+</div>
+<div class="section" id="id53">
+<h3>v7.3.0<a class="headerlink" href="#id53" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>以AAR方式嵌入SDK，减少开发者的配置</li>
+<li>不再支持微信加粉广告，请开发者执行移除相关代码</li>
+</ol>
+</div>
+<div class="section" id="id54">
+<h3>v7.2.1<a class="headerlink" href="#id54" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>内部逻辑更新</li>
+</ol>
+</div>
+<div class="section" id="id55">
+<h3>v7.2.0<a class="headerlink" href="#id55" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增 <a class="reference external" href="有米AndroidSDK微信加粉广告开发者文档-源数据版.html">微信加粉广告</a></li>
+</ol>
+</div>
+<div class="section" id="id57">
+<h3>v7.1.0<a class="headerlink" href="#id57" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>API变更：<a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 取消测试模式的设置</li>
+</ol>
+</div>
+<div class="section" id="id59">
+<h3>v7.0.1<a class="headerlink" href="#id59" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复序列化警告提示</li>
+</ol>
+</div>
+<div class="section" id="id60">
+<h3>v7.0.0<a class="headerlink" href="#id60" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>兼容Android 7.0系统，嵌入时注意:</dt>
+<dd><ol class="first last arabic">
+<li><a class="reference external" href="有米AndroidSDK积分墙开发者文档-源数据版.html#chap-2">有米的组件配置</a> 的更新说明</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li>修复覆盖更新部分版本sdk后，新sdk可能没法生效的问题</li>
+</ol>
+</div>
+<div class="section" id="id62">
+<h3>v6.5.0<a class="headerlink" href="#id62" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增动态链接库， <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-1">导入有米sdk</a> 时请注意加入</li>
+</ol>
+</div>
+<div class="section" id="id64">
+<h3>v6.4.4<a class="headerlink" href="#id64" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复MIUI系统上可能出现的crash</li>
+</ol>
+</div>
+<div class="section" id="id65">
+<h3>v6.4.3<a class="headerlink" href="#id65" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="有米AndroidSDK积分墙开发者文档-源数据版.html#chap-2">安装注册监听BroadcastReceiver可以不用配置在AndroidManifest.xml</a></li>
+</ol>
+</div>
+<div class="section" id="id67">
+<h3>v6.4.1<a class="headerlink" href="#id67" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>移除地理位置，基站相关信息的获取，开发者不用在为有米sdk配置权限 <code class="docutils literal"><span class="pre">ACCESS_FINE_LOCATION</span></code></li>
+</ol>
+</div>
+<div class="section" id="id68">
+<h3>v6.4.0<a class="headerlink" href="#id68" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>sdk嵌入方式有变动，详细请看 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-1">有米AndroidSDK通用基本配置文档</a></li>
+<li><strong>有米SDK不用再设置</strong> <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-4">混淆配置</a></li>
+<li>部分广告验证码流程</li>
+<li>修复部分努比亚手机上，没法完成积分墙任务的问题</li>
+<li>有米的所有API方法必须在 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 之后调用才能成功生效</li>
+<li>移除原有设置有米DebugLog是否输出的方法（<code class="docutils literal"><span class="pre">setEnableDebugLog(boolean)</span></code>），改为在 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-cn-1-3">初始化方法</a> 中设置</li>
+<li>移除积分管理中，客户端回调通过Receiver方式来监听积分订单到账通知的使用方法，如果开发者之前使用该方法进行监听，请改为使用 <a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-3">通过实现接口的方式来监听积分订单到账通知</a></li>
+<li><dl class="first docutils">
+<dt>以下功能的api发生变更，从静态方法改动为非静态方法</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-5">配置积分墙/分享任务样式</a></li>
+<li><a class="reference external" href="有米AndroidSDK实用工具.html#chap-3">广告默认通知栏提示配置开关</a></li>
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-4">客户端管理积分下的积分通知开关配置</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="id77">
+<h3>v6.2.0<a class="headerlink" href="#id77" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>和小米游戏中心达成合作，开发者上传发布应用/游戏到小米游戏中心时，完成一些 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-6-1">额外嵌入工作</a> 即可顺利通过审核</li>
+</ol>
+</div>
+<div class="section" id="id79">
+<h3>v6.1.0<a class="headerlink" href="#id79" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>优化积分墙任务体验流程</li>
+<li>兼容MIUI系统上，广告部分任务流程提示语没法显示的问题</li>
+</ol>
+</div>
+<div class="section" id="id80">
+<h3>v6.0.0<a class="headerlink" href="#id80" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>兼容Android 6.0系统</dt>
+<dd><ul class="first last">
+<li><dl class="first docutils">
+<dt>当您的应用运行在Android 6.0（<code class="docutils literal"><span class="pre">api</span> <span class="pre">23</span></code>）系统以上时，需要在使用有米积分墙之前，必须确保用户允许程序拥有以下权限（具体实现可以参照Demo）：</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">READ_PHONE_STATE</span></code>：</li>
+<li><code class="docutils literal"><span class="pre">WRITE_EXTERNAL_STORAGE</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>不再兼容2.3以下系统， <code class="docutils literal"><span class="pre">minSdkVersion</span></code> 提高至9</li>
+<li>改进追加任务的用户体验流程</li>
+<li>其他优化</li>
+</ol>
+</div>
+<div class="section" id="id81">
+<h3>v5.5.1<a class="headerlink" href="#id81" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复特殊情况下可能没法下载广告的问题</li>
+</ol>
+</div>
+<div class="section" id="id82">
+<h3>v5.5.0<a class="headerlink" href="#id82" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>开放更多的广告，但是开发者需要自行做 <a class="reference external" href="有米AndroidSDK积分墙开发者文档-源数据版.html#chap-4-2">任务限制</a></li>
+<li>支持 <a class="reference external" href="有米AndroidSDK积分墙开发者文档-源数据版.html#chap-4-1">分页请求</a></li>
+<li>支持更多的 <a class="reference external" href="有米AndroidSDK积分墙开发者文档-源数据版.html#chap-4-3-3">广告形式</a> （新增跳转到网页完成任务的广告形式），开发者无须额外配置，sdk已经集成好</li>
+<li><a class="reference external" href="有米AndroidSDK积分墙开发者文档-源数据版.html#chap-4-5">追加任务新增起止时间戳方法获取</a></li>
+<li>不再支持请求前设置请求数量的方法</li>
+<li>不再返回&lt;已完成&gt;状态的广告</li>
+<li>移除签到任务的相关功能</li>
+<li>修复下载安装监听器偶尔没法监听任务下载进度的问题</li>
+<li>修复部分机型上无法完成任务的问题</li>
+<li>其他优化</li>
+<li><a class="reference external" href="Youmi_Android_SDK_API_Differences_Report.html#chap-3">Diff API Report</a></li>
+</ol>
+</div>
+<div class="section" id="id87">
+<h3>v5.3.3<a class="headerlink" href="#id87" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>再次修复部分机型上无法完成任务的问题</li>
+</ol>
+</div>
+<div class="section" id="id88">
+<h3>v5.3.2<a class="headerlink" href="#id88" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt>修复部分机型上无法完成任务的问题</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="有米AndroidSDK通用基本配置文档.html#chap-1-2">权限配置</a> 发生变更</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="id90">
+<h3>v5.3.1<a class="headerlink" href="#id90" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>积分墙支持Android 5.1.0系统</li>
+<li>修复分享任务偶尔出现无法分享的问题</li>
+</ol>
+</div>
+<div class="section" id="id91">
+<h3>v5.3.0<a class="headerlink" href="#id91" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>新增 <a class="reference external" href="有米AndroidSDK分享任务开发者文档-源数据版.html">分享任务</a> ，一次分享，坐拥无限收益</li>
+<li><dl class="first docutils">
+<dt>自本版本起，SDK将不再支持下面用户数据统计功能api，旧版sdk仍可以继续使用</dt>
+<dd><ul class="first last">
+<li><code class="docutils literal"><span class="pre">AdManager.getInstance(Context</span> <span class="pre">context).setUserDataCollect(true);</span></code></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>客户端积分托管系统，积分使用类型由 <code class="docutils literal"><span class="pre">int</span></code> -&gt; <code class="docutils literal"><span class="pre">float</span></code>, 受影响接口如下:</dt>
+<dd><ul class="first last">
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2">客户端积分管理接口</a></li>
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-2">积分余额变动通知</a></li>
+<li><a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-3-3-2">客户端获取积分订单信息中的积分订单模型</a></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>其他bug修复</li>
+</ol>
+</div>
+<div class="section" id="id96">
+<h3>v5.1.3<a class="headerlink" href="#id96" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复部分机型上或某些情况下无法请求广告列表的问题</li>
+</ol>
+</div>
+<div class="section" id="id97">
+<h3>v5.1.2<a class="headerlink" href="#id97" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>修复sdk在Android 5.1.0系统上使用通知栏会导致系统界面崩溃的问题</li>
+</ol>
+</div>
+<div class="section" id="id98">
+<h3>v5.1.0<a class="headerlink" href="#id98" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>积分墙支持Android 5.0系统</li>
+<li>优化广告状态显示问题</li>
+<li>提高积分获取成功率</li>
+<li>其他优化及修复已知bug</li>
+</ol>
+</div>
+<div class="section" id="id99">
+<h3>v5.0.0<a class="headerlink" href="#id99" title="永久链接至标题">¶</a></h3>
+<ol class="arabic simple">
+<li>提高积分获取成功率</li>
+<li>取消主动开启积分墙测试模式</li>
+<li>新增在线时间检查功能</li>
+<li>优化用户数据统计功能</li>
+</ol>
+</div>
+<div class="section" id="id100">
+<h3>v4.10<a class="headerlink" href="#id100" title="永久链接至标题">¶</a></h3>
+<dl class="docutils">
+<dt><strong>新增</strong> :</dt>
+<dd><ol class="first last arabic simple">
+<li>新增追加任务</li>
+<li>支持海外版app</li>
+<li>抛出请求列表数据异常</li>
+<li>抛出请求详情页数据异常</li>
+<li>添加过滤&lt;已完成&gt;状态广告开关</li>
+<li>简化AndroidManifest.xml的组件配置</li>
+<li>新增通知栏提示配置开关</li>
+<li>提供新的客户端监听积分订单赚取接口</li>
+<li>下载通知接口新增下载开始回调接口，并且将所有回调方法执行在UI线程中</li>
+<li>提供积分墙源数据配置检查功能</li>
+</ol>
+</dd>
+<dt><strong>弃用</strong> :</dt>
+<dd><ol class="first last arabic simple">
+<li>弃用旧版获取签到列表方法，采用新的获取签到列表方法</li>
+</ol>
+</dd>
+<dt><strong>优化</strong> :</dt>
+<dd><ol class="first last arabic simple">
+<li>解决部分机型不能获取广告的问题</li>
+<li>本地积分放刷处理改进</li>
+<li>提高获取积分的成功率</li>
+<li>修复安装成功时，安装成功回调接口不生效的问题</li>
+<li>修复连续请求广告列表页时可能报出的ANR错误</li>
+<li>性能优化</li>
+</ol>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">返回顶端</a></p>
+            <p>© Copyright 2018, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('导航 <b class="caret"></b>');
+        $(".admonition-title").html('注意：');
+    </script>
+
+  </body>
+</html>

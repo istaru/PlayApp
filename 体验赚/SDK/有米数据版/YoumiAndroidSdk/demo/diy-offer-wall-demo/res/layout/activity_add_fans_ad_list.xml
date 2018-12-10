@@ -1,0 +1,16 @@
+<android.support.v4.widget.SwipeRefreshLayout
+	android:id="@+id/sr_ad_list"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:background="@drawable/diy_demo_bg"
+	>
+	
+	<ListView
+		android:id="@+id/lv_addata"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		>
+	</ListView >
+
+</android.support.v4.widget.SwipeRefreshLayout >

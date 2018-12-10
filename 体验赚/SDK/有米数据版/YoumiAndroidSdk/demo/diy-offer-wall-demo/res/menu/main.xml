@@ -1,0 +1,17 @@
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	>
+	
+	<item
+		android:id="@+id/action_points"
+		android:orderInCategory="100"
+		android:title="积分"
+		app:showAsAction="always" />
+	<item
+		android:id="@+id/action_limit"
+		android:orderInCategory="80"
+		android:title="可做任务数"
+		app:showAsAction="always" />
+
+</menu >

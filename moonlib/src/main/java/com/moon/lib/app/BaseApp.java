@@ -23,12 +23,12 @@ import com.tencent.smtt.sdk.QbSdk;
 
 public class BaseApp extends Application {
 
-    private static Context context;
+    public static Context mContext;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        context = getApplicationContext();
+        mContext = getApplicationContext();
         initLog();
         initX5();
     }
@@ -39,7 +39,7 @@ public class BaseApp extends Application {
      * @return
      */
     public static Context getContext() {
-        return context;
+        return mContext;
     }
 
     /**

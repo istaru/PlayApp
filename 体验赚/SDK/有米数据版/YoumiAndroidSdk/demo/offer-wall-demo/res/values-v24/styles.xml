@@ -1,0 +1,9 @@
+<resources >
+
+	<style name="AppBaseTheme"
+	       parent="android:Theme.Holo.Light.DarkActionBar" >
+		<item name="android:windowBackgroundFallback" >@color/global_bg</item >
+		<item name="android:windowBackground" >@color/global_bg</item >
+	</style >
+
+</resources >

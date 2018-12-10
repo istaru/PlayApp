@@ -1,0 +1,55 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/diy_demo_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_award_points"
+            style="@style/btn_style"
+            android:text="@string/award_points" />
+
+        <Button
+            android:id="@+id/btn_spend_points"
+            style="@style/btn_style"
+            android:text="@string/spend_points" />
+    
+        <Button
+            android:id="@+id/btn_get_add_fans_ad"
+            style="@style/btn_style"
+            android:text="@string/btn_get_add_fans_ad" />
+        
+        <Button
+            android:id="@+id/btn_get_all_app_opt"
+            style="@style/btn_style"
+            android:text="@string/get_all_app_opt" />
+
+        <Button
+            android:id="@+id/btn_get_all_game_opt"
+            style="@style/btn_style"
+            android:text="@string/get_all_game_opt" />
+
+        <Button
+            android:id="@+id/btn_get_game"
+            style="@style/btn_style"
+            android:text="@string/get_game" />
+
+        <Button
+            android:id="@+id/btn_get_app"
+            style="@style/btn_style"
+            android:text="@string/get_app" />
+
+        <Button
+            android:id="@+id/btn_get_extra_task_list"
+            style="@style/btn_style"
+            android:text="@string/get_extra_task_list" />
+
+    </LinearLayout>
+
+</ScrollView>

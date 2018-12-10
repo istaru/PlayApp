@@ -17,12 +17,22 @@ android {
 //                arguments = [ moduleName : project.getName() ]
 //            }
 //        }
+        /*有米SDK*/
+        ndk {
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
     }
 }
 
@@ -41,4 +51,6 @@ dependencies {
 //    /*ARouter*/
 //    implementation 'com.alibaba:arouter-api:1.4.0'
 //    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+    /*有米数据版SDK*/
+    api(name: 'YoumiSdk_v8.3.0_2018-09-20', ext: 'aar')
 }

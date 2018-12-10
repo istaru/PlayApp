@@ -1,0 +1,127 @@
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/diy_demo_bg"
+	android:padding="@dimen/activity_horizontal_margin"
+	android:scrollbarStyle="outsideOverlay"
+	>
+	
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		>
+		
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			>
+			
+			<ImageView
+				android:id="@+id/iv_add_fans_detail_page_icon"
+				android:layout_width="60dp"
+				android:layout_height="60dp"
+				android:layout_centerVertical="true"
+				android:layout_marginRight="8dp"
+				android:src="@drawable/icon"
+				/>
+			
+			<TextView
+				android:id="@+id/tv_add_fans_detail_page_points"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:layout_centerVertical="true"
+				android:text="积分"
+				android:textAppearance="?android:textAppearanceLarge"
+				android:textColor="#df123d"
+				/>
+			
+			<TextView
+				android:id="@+id/tv_add_fans_detail_page_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_alignParentTop="true"
+				android:layout_toLeftOf="@+id/tv_add_fans_detail_page_points"
+				android:layout_toRightOf="@+id/iv_add_fans_detail_page_icon"
+				android:text="应用名字"
+				android:textAppearance="?android:textAppearanceMedium"
+				android:textColor="#149CF3"
+				/>
+			
+			<TextView
+				android:id="@+id/tv_wechat_add_fens_detailpage_ad_text"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/tv_add_fans_detail_page_name"
+				android:layout_toLeftOf="@id/tv_add_fans_detail_page_points"
+				android:layout_toRightOf="@id/iv_add_fans_detail_page_icon"
+				android:text="需要首次关注"
+				android:textAppearance="?android:textAppearanceSmall"
+				android:textColor="#999999"
+				/>
+			
+			<TextView
+				android:id="@+id/tv_add_fans_detail_page_status"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@id/tv_wechat_add_fens_detailpage_ad_text"
+				android:layout_toLeftOf="@id/tv_add_fans_detail_page_points"
+				android:layout_toRightOf="@id/iv_add_fans_detail_page_icon"
+				android:text="任务状态"
+				android:textAppearance="?android:textAppearanceSmall"
+				android:textColor="#189d0a"
+				/>
+		</RelativeLayout >
+		
+		<Button
+			android:id="@+id/btn_add_fans_detail_page_start_task"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:layout_marginTop="8dp"
+			android:background="@drawable/btn_round_rectangle_bg"
+			android:padding="5dp"
+			android:textSize="16sp"
+			/>
+		
+		<include
+			layout="@layout/add_fans_ad_tips"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			/>
+		
+		<TextView
+			android:id="@+id/tv_wechat_add_fens_detailpage_example"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:text="任务教程示例："
+			android:textAppearance="?android:textAppearanceMedium"
+			android:textColor="@android:color/darker_gray"
+			/>
+		
+		<HorizontalScrollView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:scrollbars="none"
+			>
+			
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+				
+				<com.youmi.android.diyofferwall.util.NoScrollGridView
+					android:id="@+id/add_fans_detail_page_gridView"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:scrollbarStyle="outsideOverlay"
+					>
+				</com.youmi.android.diyofferwall.util.NoScrollGridView >
+			</LinearLayout >
+		</HorizontalScrollView >
+	</LinearLayout >
+</ScrollView >

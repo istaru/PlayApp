@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--
+		## 说明
+
+		这个文件为开发者适配Android 7.0系统以上才需要配置，如果没有兼容到的话，可以不管
+    -->
+
+    <cache-path
+        name="apk1"
+        path="" />
+
+    <external-path
+        name="apk2"
+        path="" />
+    <files-path
+        name="apk3"
+        path="" >
+    </files-path>
+
+
+</paths>

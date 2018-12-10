@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>有米 Android SDK 积分墙开发者文档-源数据版 &#8212; Youmi Android SDK Document v8.3.0 文档</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'v8.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          有米广告 Android SDK 文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>v8.3.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="有米AndroidSDK积分管理及相关功能.html">积分管理及相关功能</a></li>
+                <li><a href="有米AndroidSDK实用工具.html">实用工具</a></li>
+                <li><a href="有米AndroidSDK常见问题.html">常见问题</a></li>
+                <li><a href="changelog.html">更新说明</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">有米 Android SDK 积分墙开发者文档-源数据版</a><ul>
+<li><a class="reference internal" href="#id1">一、有米 Android SDK 通用基本配置</a></li>
+<li><a class="reference internal" href="#android-n">二、适配Android N</a></li>
+<li><a class="reference internal" href="#chap-dow-cn-3">三、积分墙源数据初始化及相关工作</a></li>
+<li><a class="reference internal" href="#id6">四、获取广告列表</a><ul>
+<li><a class="reference internal" href="#chap-4-1">1、获取方式</a></li>
+<li><a class="reference internal" href="#appsummaryobjectlist">2、AppSummaryObjectList</a></li>
+<li><a class="reference internal" href="#chap-4-3">3、AppSummaryObject</a></li>
+<li><a class="reference internal" href="#appextrataskobjectlist">4、AppExtraTaskObjectList</a></li>
+<li><a class="reference internal" href="#chap-4-5">5、AppExtraTaskObject</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id15">五、获取广告的详细数据</a><ul>
+<li><a class="reference internal" href="#id16">1、获取方式</a></li>
+<li><a class="reference internal" href="#appdetailobject">2、AppDetailObject</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id21">六、下载和打开应用</a><ul>
+<li><a class="reference internal" href="#app">1、大陆版App</a></li>
+<li><a class="reference internal" href="#chap-dow-cn-6-2">2、海外版App</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id27">七、监听广告下载安装（可选）</a></li>
+<li><a class="reference internal" href="#id29">八、积分管理及相关功能（重要）</a><ul>
+<li><a class="reference internal" href="#id31">1、积分管理基本操作</a></li>
+<li><a class="reference internal" href="#id33">2、监听积分余额变动</a></li>
+<li><a class="reference internal" href="#id35">3、监听积分订单到账通知</a></li>
+<li><a class="reference internal" href="#id37">4、配置积分到账提醒</a></li>
+<li><a class="reference internal" href="#id39">5、服务器托管积分</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sdk">九、SDK 实用工具（可选）</a><ul>
+<li><a class="reference internal" href="#id41">1、检查更新</a></li>
+<li><a class="reference internal" href="#id43">2、在线配置</a></li>
+<li><a class="reference internal" href="#id45">3、通知栏提示配置开关</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="android-sdk">
+<h1>有米 Android SDK 积分墙开发者文档-源数据版<a class="headerlink" href="#android-sdk" title="永久链接至标题">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p>欢迎您使用有米广告 SDK，为了保证能正常接收有米的广告，保障各位开发者的收益，请您严格按照 SDK 里 doc 文件夹下的文档步骤来嵌入 SDK ，或按照 SDK 里的 demo 源码来嵌入。</p>
+<p>以下注意事项，请仔细阅读：</p>
+<ol class="last arabic simple">
+<li>在有米后台创建应用获取发布 ID 和应用密钥时，请注意区分好 Android 和 iOS 平台，不能弄错平台。</li>
+<li>一对 ID 和应用密钥只能用在一个应用内，不能重复用在多个应用内，否则会拿不到正式广告。</li>
+<li>嵌入完 SDK，可以拿到测试广告，测试没问题，需上传应用给有米审核，审核通过后才能拿到正式广告，正式广告才能产生收益。</li>
+<li>有米广告不支持模拟器，测试广告时请用真机来测试，另外，Android 广告不支持 Android 平板，需要用手机来测试 Android 广告。</li>
+<li>应用 <code class="docutils literal"><span class="pre">提交市场审核前</span></code> 请注意：不要在界面或代码中出现类似 <strong>ym</strong>, <strong>youmi</strong>, <strong>ad</strong> 等与有米或者广告相关的字眼；记得隐藏广告以及广告入口；打包应用时开启混淆相关配置。</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>一、有米 Android SDK 通用基本配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p>在进行积分墙源数据的集成之前，请确保已经按照 <a class="reference external" href="有米AndroidSDK通用基本配置文档.html">有米 Android SDK 通用基本配置文档</a> 进行通用配置。</p>
+</div>
+<div class="section" id="android-n">
+<span id="chap-2"></span><h2>二、适配Android N<a class="headerlink" href="#android-n" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<ol class="arabic simple">
+<li>为你的项目导入Android Support v4库，如果有疑问，请查阅有米原始sdk压缩包(<a href="#id3"><span class="problematic" id="id4">**</span></a>.zip)下 <code class="docutils literal"><span class="pre">/demo/diyofferdemo/build.gradle</span></code> 中的描述</li>
+<li>添加Support v4库中的FileProvider到AndroidManifest.xml中（请务必修改 <code class="docutils literal"><span class="pre">android:authorities</span></code> 为贵应用的标识，一般为 <code class="docutils literal"><span class="pre">包名.fileProvider</span></code> ）:</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="c">&lt;!-- 有米SDK为了兼容Android N应用间共享文件行为变更而需要配置的FileProvider --&gt;</span>
+<span class="c">&lt;!-- 这里主要为授予有米SDK拥有打开apk安装界面的功能 --&gt;</span>
+<span class="c">&lt;!-- 请务必修改 android:authorities 为贵应用的标识，一般为 包名.fileProvider --&gt;</span>
+<span class="nt">&lt;provider</span>
+    <span class="na">android:name=</span><span class="s">&quot;android.support.v4.content.FileProvider&quot;</span>
+    <span class="na">android:authorities=</span><span class="s">&quot;com.youmi.android.offerdemo.fileProvider&quot;</span>
+    <span class="na">android:exported=</span><span class="s">&quot;false&quot;</span>
+    <span class="na">android:grantUriPermissions=</span><span class="s">&quot;true&quot;</span> <span class="nt">&gt;</span>
+
+    <span class="nt">&lt;meta-data</span>
+        <span class="na">android:name=</span><span class="s">&quot;android.support.FILE_PROVIDER_PATHS&quot;</span>
+        <span class="na">android:resource=</span><span class="s">&quot;@xml/file_provider&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/provider &gt;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>在项目的res目录中创建 <code class="docutils literal"><span class="pre">res/xml/file_provider.xml</span></code> 文件，以对应上述provider中meta-data中所指定的文件(这里的文件名字可以随意起)，但是必须在文件里面添加两个路径:</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;paths xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot; &gt;
+    &lt;--
+        有米sdk会将apk优先下载在sd卡中，如果sd卡不能使用，则会使用应用私有缓存目录context.getCache()
+        因此需要开发者配置下面两个路径方便有米sdk在下载完apk之后启动apk的安装页面
+    --&gt;
+    &lt;cache-path
+        name=&quot;apk1&quot;
+        path=&quot;.&quot; /&gt;
+    &lt;external-path
+        name=&quot;apk2&quot;
+        path=&quot;.&quot; /&gt;
+&lt;/paths &gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="chap-dow-cn-3">
+<span id="id5"></span><h2>三、积分墙源数据初始化及相关工作<a class="headerlink" href="#chap-dow-cn-3" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p>请在使用积分墙功能之前进行初始化（如：在应用启动的第一个 Activity 中的 onCreate方法中调用以下代码）</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.DiyOfferWallManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppLaunch</span><span class="o">();</span>
+</pre></div>
+</div>
+<p>在应用退出的地方（如：Activity的onDestroy方法中）调用以下代码进行资源回收</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.DiyOfferWallManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">onAppExit</span><span class="o">();</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="first admonition-title">警告</p>
+<p class="last">如果您同时使用 <strong>积分墙源数据集成</strong> ，那么仅需要调用上述代码一遍即可，无须调用两次。</p>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>四、获取广告列表<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="chap-4-1">
+<span id="id7"></span><h3>1、获取方式<a class="headerlink" href="#chap-4-1" title="永久链接至标题">¶</a></h3>
+<div class="admonition caution">
+<p class="first admonition-title">警告</p>
+<p class="last"><strong>注意：</strong> 对于每次请求的广告列表，最终返回的广告数量可能小于实际请求的广告数量。</p>
+</div>
+<div class="section" id="ui">
+<span id="chap-4-1-1"></span><h4>1. 同步加载方式（请注意在非 UI 线程中使用）：<a class="headerlink" href="#ui" title="永久链接至标题">¶</a></h4>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *  获取积分墙列表数据</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @param  requestType    请求类型</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_ALL          : 请求所有广告，游戏先于广告展示</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_SPECIAL_SORT : 请求所有广告，应用先于游戏显示</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_GAME         : 只请求游戏广告</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_APP          : 只请求应用广告</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_EXTRA_TASK   : 请求追加任务列表</span>
+<span class="cm"> *  @param  pageIndex       页码</span>
+<span class="cm"> *  @param  adNumberPage    请求数量</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @return AppSummaryObjectList   广告摘要信息列表</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @throws NetworkException       网络异常</span>
+<span class="cm"> *  @throws ErrorCodeException     请求错误</span>
+<span class="cm"> */</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">getOfferWallAdList</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestType</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pageIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">adNumberPage</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><em>示例代码</em> ：</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppSummaryObjectList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.DiyOfferWallManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.NetworkException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.ErrorCodeException</span><span class="o">;</span>
+<span class="o">...</span>
+
+
+<span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="c1">// 请求第一页10个广告，游戏先于应用展示</span>
+            <span class="n">AppSummaryObjectList</span> <span class="n">data</span> <span class="o">=</span> <span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">getOfferWallAdList</span><span class="o">(</span><span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">ym_param_REQUEST_ALL</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">10</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NetworkException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="s">&quot;请求失败，请检查网络&quot;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ErrorCodeException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;请求错误，错误代码 ： %d， 请联系客服&quot;</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getErrCode</span><span class="o">()),</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chap-4-1-2">
+<span id="id8"></span><h4>2. 异步加载方式：<a class="headerlink" href="#chap-4-1-2" title="永久链接至标题">¶</a></h4>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *  异步加载积分墙数据列表</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @param  requestType    请求类型</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_ALL          : 请求所有广告，游戏先于广告展示</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_SPECIAL_SORT : 请求所有广告，应用先于游戏显示</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_GAME         : 只请求游戏广告</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_APP          : 只请求应用广告</span>
+<span class="cm"> *      DiyOfferWallManager.ym_param_REQUEST_EXTRA_TASK   : 请求追加任务列表</span>
+<span class="cm"> *  @param  pageIndex       页码</span>
+<span class="cm"> *  @param  adNumberPage    请求数量</span>
+<span class="cm"> */</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">loadOfferWallAdList</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestType</span><span class="o">,</span> <span class="kt">int</span> <span class="n">pageIndex</span><span class="o">,</span> <span class="kt">int</span> <span class="n">adNumberPage</span><span class="o">,</span> <span class="n">AppSummaryDataInterface</span> <span class="n">appSummaryDataInterface</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><em>示例代码</em> ：</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppSummaryDataInterface</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppSummaryObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppSummaryObjectList</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.DiyOfferWallManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  请求第一页10个广告，游戏先于应用展示</span>
+<span class="cm"> */</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">loadOfferWallAdList</span><span class="o">(</span><span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">ym_param_REQUEST_ALL</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="mi">10</span><span class="o">,</span>
+    <span class="k">new</span> <span class="n">AppSummaryDataInterface</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         *  当成功获取到积分墙列表数据的时候，会回调本方法</span>
+<span class="cm">         *  注意：列表数据有可能为空（比如：没有广告的时候），开发者处理之前，请先判断列表是否为空d</span>
+<span class="cm">         *  注意：本接口不在UI线程中执行，所以请不要在本接口中进行UI线程方面的操作</span>
+<span class="cm">         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadAppSumDataSuccess</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AppSummaryObjectList</span> <span class="n">adList</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">adList</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">adList</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">())</span> <span class="o">{</span>
+                <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">adList</span><span class="o">.</span><span class="na">size</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="n">adList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">toString</span><span class="o">());</span>
+                <span class="o">}</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="s">&quot;当前没有广告哦~ 晚点再来吧&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         *  因为网络问题而导致请求失败时，会回调本方法</span>
+<span class="cm">         *  注意：本接口不在UI线程中执行，所以请不要在本接口中进行UI线程方面的操作</span>
+<span class="cm">         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadAppSumDataFailed</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="s">&quot;请求失败，请检查网络&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         *  请求成功，但是返回有米错误代码时候，会回调本方法</span>
+<span class="cm">         *  注意：本接口不在UI线程中执行，所以请不要在本接口中进行UI线程方面的操作</span>
+<span class="cm">         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadAppSumDataFailedWithErrorCode</span><span class="o">(</span><span class="kt">int</span> <span class="n">code</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;请求错误，错误代码 ： %d， 请联系客服&quot;</span><span class="o">,</span> <span class="n">code</span><span class="o">));</span>
+        <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="appsummaryobjectlist">
+<span id="chap-4-2"></span><h3>2、AppSummaryObjectList<a class="headerlink" href="#appsummaryobjectlist" title="永久链接至标题">¶</a></h3>
+<p>AppSummaryObjectList 中包含了，每个广告的摘要信息 <a class="reference external" href="#chap-4-3">AppSummaryObject</a></p>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<ul class="last simple">
+<li>自SDK <strong>v5.5.0</strong> 起，每次请求列表时，本类都会返回用户当天可做任务上限限制数的相关信息</li>
+<li>有米平台根据每个应用及每个用户设置了用户任务限制数，开发者需要自行提示用户当天可做任务数，否则当用户当天所做的新任务超过上限时可能会导致没有收入</li>
+<li><dl class="first docutils">
+<dt>用户任务限制数：</dt>
+<dd><ul class="first last">
+<li>用户今天已经安装激活的次数</li>
+<li>用户今天的安装激活次数限制，如果今天的安装激活次数超过本限制，则用户无法拿到积分</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>用户任务限制数仅针对《未完成》状态的广告生效，也即仅在用户当天开启一个新任务的时候进行限制，当天的追加任务将不会受这个限制影响。</li>
+</ul>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppSummaryObjectList</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  添加广告</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">add</span><span class="o">(</span><span class="n">AppSummaryObject</span> <span class="n">object</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  获取指定索引的广告的摘要信息</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">AppSummaryObject</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  判断广告列表是否为空</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  获取广告列表的长度</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">();</span>
+
+    <span class="c1">//-----------------------------------------</span>
+    <span class="c1">// 下面方法为sdk v5.5.0之后新增方法</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  本列表对应的请求页码</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPageIndex</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  本列表对应的请求个数</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getPerPageNumber</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  当天用户已经完成的新任务个数</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getInstallTimes</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  当天用户能完成的新任务上限个数</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getInstallLimit</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chap-4-3">
+<span id="id9"></span><h3>3、AppSummaryObject<a class="headerlink" href="#chap-4-3" title="永久链接至标题">¶</a></h3>
+<p>AppSummaryObject 中集成了一条广告的摘要信息，通过使用 AppSummaryObject，您可以获取广告的摘要信息，然后以列表形式展示出来：</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppSummaryObject</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="n">AppSummaryObject</span> <span class="n">appSummaryObject</span><span class="o">;</span>
+
+<span class="kt">int</span> <span class="n">id</span>            <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getAdId</span><span class="o">();</span>         <span class="c1">// 获取广告 id</span>
+<span class="n">String</span> <span class="n">adName</span>     <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getAppName</span><span class="o">();</span>      <span class="c1">// 获取 app 的名称</span>
+<span class="n">String</span> <span class="n">pn</span>         <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getPackageName</span><span class="o">();</span>  <span class="c1">// 获取 app 的包名</span>
+<span class="kt">int</span> <span class="n">versionCode</span>   <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getVersionCode</span><span class="o">();</span>  <span class="c1">// 获取 app 的版本号</span>
+<span class="n">String</span> <span class="n">adIconUrl</span>  <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getIconUrl</span><span class="o">();</span>      <span class="c1">// 获取 app 的图标地址</span>
+<span class="n">String</span> <span class="n">adtext</span>     <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getAdSlogan</span><span class="o">();</span>     <span class="c1">// 获取广告标语</span>
+<span class="n">String</span> <span class="n">adSize</span>     <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getAppSize</span><span class="o">();</span>      <span class="c1">// 获取 app 的大小</span>
+<span class="kt">int</span> <span class="n">points</span>        <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getPoints</span><span class="o">();</span>       <span class="c1">// 获取广告的积分（已完成状态下的广告积分返回值为0）</span>
+<span class="n">String</span> <span class="n">pointsUnit</span> <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getPointsUnit</span><span class="o">();</span>   <span class="c1">// 获取广告的积分单位</span>
+
+<span class="kt">int</span> <span class="n">adStatus</span>      <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getAdTaskStatus</span><span class="o">();</span>     <span class="c1">// 获取广告的完成状态</span>
+<span class="kt">int</span> <span class="n">dlStatus</span>      <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getAdDownloadStatus</span><span class="o">();</span> <span class="c1">// 获取广告的下载状态</span>
+<span class="n">String</span> <span class="n">steps</span>      <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getTaskSteps</span><span class="o">();</span>        <span class="c1">// 任务步骤流程指引</span>
+<span class="n">AppExtraTaskObjectList</span> <span class="n">list</span> <span class="o">=</span> <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getExtraTaskList</span><span class="o">();</span>  <span class="c1">// 获取追加任务列表</span>
+
+<span class="kt">int</span> <span class="n">adForm</span>        <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getAdForm</span><span class="o">();</span> <span class="c1">// 广告形式，下面有说明</span>
+<span class="kt">int</span> <span class="n">url</span>           <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getUrl</span><span class="o">();</span>    <span class="c1">// 广告对应的url，url含义视乎广告形式，下面有说明</span>
+<span class="kt">int</span> <span class="n">rewardCount</span>   <span class="o">=</span>  <span class="n">appSummaryObject</span><span class="o">.</span><span class="na">getRewardsCount</span><span class="o">();</span>    <span class="c1">// 今天本广告获得奖励的用户个数</span>
+</pre></div>
+</div>
+<p><strong>注：</strong></p>
+<ol class="arabic simple" id="chap-dow-cn-4-3-1">
+<li>广告的完成状态有3种，对应的值分别为：</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span></span>&lt;未完成&gt;：cde.ewd.adw.os.df.AdTaskStatus.NOT_COMPLETE;
+&lt;有追加任务&gt;：cde.ewd.adw.os.df.AdTaskStatus.HAS_EXTRA_TASK;
+&lt;已完成&gt;：cde.ewd.adw.os.df.AdTaskStatus.ALREADY_COMPLETE;
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="first admonition-title">注意</p>
+<ul class="last">
+<li><dl class="first docutils">
+<dt>广告状态说明</dt>
+<dd><div class="first last line-block">
+<div class="line">正常的状态转换流程为： <strong>未完成</strong> –&gt; <strong>有追加任务</strong> –&gt; <strong>已完成</strong></div>
+<div class="line">广告一开始处于 <strong>&lt;未完成&gt;</strong> 状态，当用户按照提示完成了正常的任务（如：注册一个账号，试玩一段时间等）后，</div>
+<div class="line">如果有追加任务可以进行（该广告存在追加任务，并且有追加任务处于 <a class="reference external" href="#chap-4-5">任务未开始</a> 或者 <a class="reference external" href="#chap-4-5">任务进行中</a> ），那么表示任务当前处于 <strong>&lt;有追加任务&gt;</strong> 状态中；</div>
+<div class="line">否则，任务就处于 <strong>&lt;已完成&gt;</strong> 状态。</div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p class="first">其中只有 <strong>&lt;未完成&gt;</strong> 或者 <strong>&lt;有追加任务&gt;</strong> 状态下的广告才可以获取积分， <strong>&lt;已完成&gt;</strong> 状态下的广告是不能获取积分的；同时， <strong>&lt;已完成&gt;</strong> 状态下方法 <a class="reference external" href="#chap-4-3">AppSummaryObject</a> 的 <code class="docutils literal"><span class="pre">getPoints()</span></code> 的返回值也为0；</p>
+</li>
+</ul>
+</div>
+<ol class="arabic simple" start="2">
+<li>广告的下载状态：</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span></span>&lt;未下载&gt;：cde.ewd.adw.os.df.AdDownloadStatus.NOT_DOWNLOAD;
+&lt;正在下载&gt;：cde.ewd.adw.os.df.AdDownloadStatus.DOWNLOADING;
+&lt;已经下载&gt;：cde.ewd.adw.os.df.AdDownloadStatus.ALERADY_DOWNLOAN;
+</pre></div>
+</div>
+<ol class="arabic simple" id="chap-4-3-3" start="3">
+<li>广告形式：</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span></span>&lt;下载安装形式&gt;：cde.ewd.adw.os.df.AdForm.DOWNLOAD;
+&lt;跳转到GooglePlay形式&gt;：cde.ewd.adw.os.df.AdForm.GO2GP;
+&lt;跳转到网页形式&gt;: cde.ewd.adw.os.df.AdForm.GO2WEB;
+
+如果为&lt;下载安装形式&gt;，则 appSummaryObject.getUrl() 为广告的apk下载地址
+如果为&lt;跳转到GooglePlay形式&gt;，则 appSummaryObject.getUrl() 为googleplay上这个广告的跳转url
+如果为&lt;跳转到网页形式&gt;，则 appSummaryObject.getUrl() 为广告的网页地址
+</pre></div>
+</div>
+</div>
+<div class="section" id="appextrataskobjectlist">
+<h3>4、AppExtraTaskObjectList<a class="headerlink" href="#appextrataskobjectlist" title="永久链接至标题">¶</a></h3>
+<p>AppExtraTaskObjectList 中包含了每个广告的摘要信息 <a class="reference external" href="#chap-4-5">AppExtraTaskObject</a> ，每次请求广告的时候，如果该广告有追加任务，那么可以通过 <a class="reference external" href="#chap-4-3">AppSummaryObject</a> . <code class="docutils literal"><span class="pre">getExtraTaskList()</span></code> 来获取，该广告所对应的所有追加任务。</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AppExtraTaskObjectList</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  添加追加任务</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">add</span><span class="o">(</span><span class="n">AppExtraTaskObject</span> <span class="n">object</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  获取指定索引的追加任务的信息</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">AppExtraTaskObject</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">index</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  判断追加任务列表是否为空</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isEmpty</span><span class="o">();</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  获取追加任务列表的长度</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">size</span><span class="o">();</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chap-4-5">
+<span id="id14"></span><h3>5、AppExtraTaskObject<a class="headerlink" href="#chap-4-5" title="永久链接至标题">¶</a></h3>
+<p>AppExtraTaskObject 中集成了一条广告的单个追加任务摘要信息：</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppExtraTaskObject</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="n">AppExtraTaskObject</span> <span class="n">appExtraTaskObject</span><span class="o">;</span>
+
+<span class="n">String</span> <span class="n">adText</span>   <span class="o">=</span>  <span class="n">appExtraTaskObject</span><span class="o">.</span><span class="na">getAdText</span><span class="o">();</span> <span class="c1">// 获取追加任务的描述</span>
+<span class="kt">int</span> <span class="n">points</span>      <span class="o">=</span>  <span class="n">appExtraTaskObject</span><span class="o">.</span><span class="na">getPoints</span><span class="o">();</span> <span class="c1">// 获取本个追加任务的积分</span>
+<span class="kt">int</span> <span class="n">status</span>      <span class="o">=</span>  <span class="n">appExtraTaskObject</span><span class="o">.</span><span class="na">getStatus</span><span class="o">();</span> <span class="c1">// 获取追加任务的状态</span>
+
+<span class="c1">// sdk v5.5.0 新增下面两个方法</span>
+<span class="c1">// 只有完成了主任务，即任务当前处于&lt;追加任务状态&gt;（AdTaskStatus.HAS_EXTRA_TASK），追加任务的起止时间戳才不会为0，否则为0</span>
+
+<span class="kt">long</span> <span class="n">startTime</span>  <span class="o">=</span>  <span class="n">appExtraTaskObject</span><span class="o">.</span><span class="na">getStartTimeStamp</span><span class="o">();</span> <span class="c1">// 获取追加任务起始时间戳(秒)</span>
+<span class="kt">long</span> <span class="n">endTime</span>    <span class="o">=</span>  <span class="n">appExtraTaskObject</span><span class="o">.</span><span class="na">getEndTimeStamp</span><span class="o">();</span> <span class="c1">// 获取追加任务结束时间戳(秒)</span>
+</pre></div>
+</div>
+<p><strong>注：</strong> 追加任务的状态有4种，对应的值分别为：</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span>&lt;任务未开始&gt;：cde.ewd.adw.os.df.AdExtraTaskStatus.NOT_START;
+&lt;任务进行中&gt;：cde.ewd.adw.os.df.AdExtraTaskStatus.IN_PROGRESS;
+&lt;任务已完成&gt;：cde.ewd.adw.os.df.AdExtraTaskStatus.COMPLETE;
+&lt;任务已过期&gt;：cde.ewd.adw.os.df.AdExtraTaskStatus.OUT_OF_DATE;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id15">
+<h2>五、获取广告的详细数据<a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="id16">
+<h3>1、获取方式<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<div class="section" id="id17">
+<h4>1. 同步加载方式（请注意在非 UI 线程中使用）：<a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h4>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *  获取广告的详细信息（请注意不要在 UI 线程中直接使用）</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @param   appSummaryObject 广告的摘要信息对象</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @return  AppDetailObject 广告的详细信息对象</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @throws  NetworkException       网络异常</span>
+<span class="cm"> *  @throws  ErrorCodeException     请求错误</span>
+<span class="cm"> */</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">getAppDetailData</span><span class="o">(</span><span class="n">AppSummaryObject</span> <span class="n">appSummaryObject</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><em>示例代码</em> ：</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppSummaryObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppDetailObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.DiyOfferWallManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.NetworkException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.ErrorCodeException</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">Runnable</span><span class="o">()</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">try</span><span class="o">{</span>
+            <span class="c1">// 这里传入广告的摘要信息数据模型对象，以获取广告的详细数据</span>
+            <span class="n">AppDetailObject</span> <span class="n">data</span>  <span class="o">=</span> <span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">getAppDetailData</span><span class="o">(</span><span class="n">appSummaryObject</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NetworkException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="s">&quot;请求失败，请检查网络&quot;</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">ErrorCodeException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;请求错误，错误代码 ： %d， 请联系客服&quot;</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">getErrCode</span><span class="o">()),</span> <span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}).</span><span class="na">start</span><span class="o">();</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id18">
+<h4>2. 异步加载方式：<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h4>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *  获取广告的详细信息</span>
+<span class="cm"> *</span>
+<span class="cm"> *  @param  appSumObject  广告的摘要信息对象</span>
+<span class="cm"> *  @param  appDetailDataInterface  回调接口，当返回结果时回调本接口</span>
+<span class="cm"> */</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">loadAppDetailData</span><span class="o">(</span><span class="n">AppSummaryObject</span> <span class="n">appSummaryObject</span><span class="o">,</span> <span class="n">AppDetailDataInterface</span> <span class="n">appDetailDataInterface</span><span class="o">);</span>
+</pre></div>
+</div>
+<p><em>示例代码</em> ：</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppSummaryObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppDetailObject</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.DiyOfferWallManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppDetailDataInterface</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="cm">/**</span>
+<span class="cm"> *  异步加载积分墙某个广告的详细数据</span>
+<span class="cm"> */</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">).</span><span class="na">loadAppDetailData</span><span class="o">(</span><span class="n">appSummaryObject</span><span class="o">,</span>
+    <span class="k">new</span> <span class="n">AppDetailDataInterface</span><span class="o">()</span> <span class="o">{</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         *  当成功加载到广告数据的时候，会回调本方法</span>
+<span class="cm">         *  注意：广告详细数据有可能为空（比如：广告下架了），开发者处理之前，请先判断是否为空</span>
+<span class="cm">         *  注意：本接口不在UI线程中执行， 所以请不要在本接口中进行UI线程方面的操作</span>
+<span class="cm">         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadAppDetailDataSuccess</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AppDetailObject</span> <span class="n">appDetailObject</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">appDetailObject</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="n">appDetailObject</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">Log</span><span class="o">.</span><span class="na">i</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="s">&quot;广告无效&quot;</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         *  因为网络问题而导致请求失败时，会回调本方法</span>
+<span class="cm">         *  注意：本接口不在UI线程中执行， 所以请不要在本接口中进行UI线程方面的操作</span>
+<span class="cm">         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadAppDetailDataFailed</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="s">&quot;请求失败，请检查网络&quot;</span><span class="o">);</span>
+        <span class="o">}</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         *  请求成功，但是返回有米错误代码时候，会回调本方法</span>
+<span class="cm">         *  注意：本接口不在UI线程中执行， 所以请不要在本接口中进行UI线程方面的操作</span>
+<span class="cm">         */</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onLoadAppDetailDataFailedWithErrorCode</span><span class="o">(</span><span class="kt">int</span> <span class="n">code</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">Log</span><span class="o">.</span><span class="na">e</span><span class="o">(</span><span class="s">&quot;YoumiSdk&quot;</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">&quot;请求错误，错误代码 ： %d， 请联系客服&quot;</span><span class="o">,</span> <span class="n">code</span><span class="o">));</span>
+        <span class="o">}</span>
+<span class="o">});</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="appdetailobject">
+<span id="chap-5-2"></span><h3>2、AppDetailObject<a class="headerlink" href="#appdetailobject" title="永久链接至标题">¶</a></h3>
+<p>AppDetailObject 中集成了一条广告的详细信息，AppDetailObject继承自 <a class="reference external" href="#chap-4-3">AppSummaryObject</a> ，通过 AppDetailObject，您可以获取广告的详细信息，然后展示广告的详情页</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.AppDetailObject</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="n">AppDetailObject</span> <span class="n">appDetailObject</span><span class="o">;</span>
+
+<span class="kt">int</span> <span class="n">id</span>              <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAdId</span><span class="o">();</span>           <span class="c1">// 获取广告 id</span>
+<span class="n">String</span> <span class="n">adName</span>       <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAppName</span><span class="o">();</span>        <span class="c1">// 获取 app 的名称</span>
+<span class="n">String</span> <span class="n">pn</span>           <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getPackageName</span><span class="o">();</span>    <span class="c1">// 获取 app 的包名</span>
+<span class="kt">int</span> <span class="n">versionCode</span>     <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getVersionCode</span><span class="o">();</span>    <span class="c1">// 获取 app 的版本号</span>
+<span class="n">String</span> <span class="n">adIconUrl</span>    <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getIconUrl</span><span class="o">();</span>        <span class="c1">// 获取 app 的图标地址</span>
+<span class="n">String</span> <span class="n">adSlogan</span>     <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAdSlogan</span><span class="o">();</span>       <span class="c1">// 获取广告标语</span>
+<span class="n">String</span> <span class="n">size</span>         <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAppSize</span><span class="o">();</span>        <span class="c1">// 获取 app 的大小</span>
+<span class="kt">int</span> <span class="n">points</span>          <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getPoints</span><span class="o">();</span>         <span class="c1">// 获取广告的积分（已完成状态下的广告积分返回值为0）</span>
+<span class="n">String</span> <span class="n">pointsUnit</span>   <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getPointsUnit</span><span class="o">();</span>     <span class="c1">// 获取广告的积分单位</span>
+
+<span class="kt">int</span> <span class="n">adStatus</span>        <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAdTaskStatus</span><span class="o">();</span>     <span class="c1">// 获取广告的完成状态</span>
+<span class="kt">int</span> <span class="n">dlStatus</span>        <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAdDownloadStatus</span><span class="o">();</span> <span class="c1">// 获取广告的下载状态</span>
+<span class="n">String</span> <span class="n">steps</span>        <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getTaskSteps</span><span class="o">();</span>        <span class="c1">// 任务步骤流程指引</span>
+<span class="n">AppExtraTaskObjectList</span> <span class="n">list</span> <span class="o">=</span> <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getExtraTaskList</span><span class="o">();</span>  <span class="c1">// 获取追加任务列表</span>
+
+<span class="kt">int</span> <span class="n">adForm</span>          <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAdForm</span><span class="o">();</span> <span class="c1">// 广告形式</span>
+<span class="kt">int</span> <span class="n">url</span>             <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getUrl</span><span class="o">();</span>    <span class="c1">// 广告对应的url，url含义视乎广告形式</span>
+<span class="kt">int</span> <span class="n">rewardCount</span>     <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getRewardsCount</span><span class="o">();</span>    <span class="c1">// 今天本广告获得奖励的用户个数</span>
+
+<span class="c1">// 下面为广告详细数据模型新增的方法</span>
+<span class="n">String</span> <span class="n">versionName</span>  <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getVersionName</span><span class="o">();</span>    <span class="c1">// 获取 app 的版本名</span>
+<span class="n">String</span> <span class="o">[]</span> <span class="n">ssUrls</span>    <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getScreenShotUrls</span><span class="o">();</span> <span class="c1">// 获取 app 的截图地址列表</span>
+<span class="n">String</span> <span class="n">desc</span>         <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getDescription</span><span class="o">();</span>    <span class="c1">// 获取广告的详细描述</span>
+<span class="n">String</span> <span class="n">appCat</span>       <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAppCategory</span><span class="o">();</span>    <span class="c1">// 获取应用类型</span>
+<span class="n">String</span> <span class="n">author</span>       <span class="o">=</span>  <span class="n">appDetailObject</span><span class="o">.</span><span class="na">getAuthor</span><span class="o">();</span>         <span class="c1">// 获取该 app 的作者名</span>
+</pre></div>
+</div>
+<p><strong>注：</strong> 广告的完成状态、下载状态、广告的形式以及追加任务的介绍值请参考 <a class="reference external" href="#chap-4-3">AppSummaryObject</a> 。</p>
+</div>
+</div>
+<div class="section" id="id21">
+<h2>六、下载和打开应用<a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p><strong>注意：</strong> 自有米Android SDK 4.10版本开始，有米积分墙源数据SDK 将投放大陆广告和海外广告，开发者需要根据自己的App实际使用区域来 <strong>选择合适的下载安装/打开广告API</strong> ，如：</p>
+<ul class="simple">
+<li>如果开发者的应用只运行在大陆，那么只需要使用下面的大陆版App的下载和打开应用方式来进行即可</li>
+<li>如果开发者的应用同时运行在大陆以及海外环境，则需要关注下面两种方法；</li>
+</ul>
+<div class="section" id="app">
+<span id="chap-dow-cn-6-1"></span><h3>1、大陆版App<a class="headerlink" href="#app" title="永久链接至标题">¶</a></h3>
+<p>那么调用下面方法即可，SDK 会自行判断是下载还是打开广告，如果该广告的完成状态为 <a class="reference external" href="#chap-dow-cn-4-3-1">未完成</a> 或者 <a class="reference external" href="#chap-dow-cn-4-3-1">有追加任务</a> ，则可获取积分结算</p>
+<div class="admonition danger">
+<p class="first admonition-title">危险</p>
+<p class="last"><strong>注意：</strong> 下载和打开广告务必调用下面两个方法之一，否则无法获取积分和结算</p>
+</div>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.os.df.DiyOfferWallManager</span><span class="o">;</span>
+<span class="o">...</span>
+
+<span class="c1">// 方法一：通过传入 AppSummaryObject 对象来进行下载或者打开</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">openOrDownloadApp</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="n">AppSummaryObject</span> <span class="n">appSummaryObject</span><span class="o">);</span>
+
+<span class="c1">// 方法二：通过传入 AppDetailObject 对象来进行下载或者打开</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">openOrDownloadApp</span><span class="o">(</span><span class="n">Activity</span> <span class="n">activity</span><span class="o">,</span> <span class="n">AppDetailObject</span> <span class="n">appDetailObject</span><span class="o">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="chap-dow-cn-6-2">
+<span id="id24"></span><h3>2、海外版App<a class="headerlink" href="#chap-dow-cn-6-2" title="永久链接至标题">¶</a></h3>
+<p><strong>下载安装方式 ：</strong></p>
+<p>开发者需要判断 <a class="reference external" href="#chap-4-3">AppSummaryObject</a> 或者 <a class="reference external" href="#chap-5-2">AppDetailObject</a> 对象的 <code class="docutils literal"><span class="pre">getGoogleAdDownloadUrl</span></code> 方法获取的googleplay上这个广告的跳转url，<strong>如果url地址不为空，并且应用还没有安装</strong>，那么这个时候开发者应该自己实现一个跳转—— <strong>通过浏览器打开这个url到达play商店进行下载安装</strong> （demo中有例子，开发者可以参考使用）</p>
+<p><strong>打开方式：</strong></p>
+<p>调用大陆版app的下载或打开接口即可。</p>
+</div>
+</div>
+<div class="section" id="id27">
+<h2>七、监听广告下载安装（可选）<a class="headerlink" href="#id27" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<p><strong>本功能只适用与</strong> <a class="reference external" href="#chap-dow-cn-6-1">大陆版app</a> <strong>使用</strong></p>
+<p><strong>应用场景推荐：</strong></p>
+<p>当广告下载安装后，如果用户没有体验足够的时间或者完成指定的提示任务，广告将处于&lt;未完成&gt;状态，
+但这个时候，开发者可以实现本功能，当监听到广告已经安装成功时，将广告定义为一种新的状态，
+如&lt;未试用&gt;、&lt;未注册&gt;等，通过更改ui上的状态为&lt;未试用&gt;（&lt;未注册&gt;）来暗示用户就差一点点就可以拿到积分以提高转化率，最终提高收入。</p>
+<p><strong>使用方法：</strong></p>
+<ol class="arabic simple" id="chap-dow-cn-7">
+<li>实现下面接口</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> *  app下载安装监听器</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">interface</span> <span class="nc">DiyAppNotify</span> <span class="o">{</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  下载开始通知，在 UI 线程中执行。</span>
+<span class="cm">     *  @param  id</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDownloadStart</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  下载进度变更通知，在 UI 线程中执行。</span>
+<span class="cm">     *  @param  id                 广告id</span>
+<span class="cm">     *  @param  contentLength      本次下载总长度</span>
+<span class="cm">     *  @param  completeLength     已完成的长度</span>
+<span class="cm">     *  @param  percent            已完成百分比</span>
+<span class="cm">     *  @param  speedBytesPerS     每秒的下载速度 B/s</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDownloadProgressUpdate</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">,</span> <span class="kt">long</span> <span class="n">contentLength</span><span class="o">,</span> <span class="kt">long</span> <span class="n">completeLength</span><span class="o">,</span> <span class="kt">int</span> <span class="n">percent</span><span class="o">,</span> <span class="kt">long</span> <span class="n">speedBytesPerS</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  下载成功通知，在 UI 线程中执行。</span>
+<span class="cm">     *  @param  id</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDownloadSuccess</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  下载失败通知，在 UI 线程中执行。</span>
+<span class="cm">     *  @param  id</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDownloadFailed</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">);</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     *  安装成功通知，在 UI 线程中执行。</span>
+<span class="cm">     *  @param id</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onInstallSuccess</span><span class="o">(</span><span class="kt">int</span> <span class="n">id</span><span class="o">);</span>
+
+<span class="o">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>注册/注销接口</li>
+</ol>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">// 如：在Activity的onCreate方法中注册接口，那么当广告在下载/安装的时候就会通知这个接口</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">registerListener</span><span class="o">(</span><span class="n">DiyAppNotify</span> <span class="n">listener</span><span class="o">);</span>
+
+<span class="c1">// 如：在Activity的OnDestory方法中注销接口，那么就不会在受到广告下载/安装的相关信息</span>
+<span class="n">DiyOfferWallManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">removeListener</span><span class="o">(</span><span class="n">DiyAppNotify</span> <span class="n">listener</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p class="last"><strong>注意：</strong> 如果需要判断两个 app 是否为同一个，则可以通过获取它的广告 id 进行比较即可。</p>
+</div>
+</div>
+<div class="section" id="id29">
+<h2>八、积分管理及相关功能（重要）<a class="headerlink" href="#id29" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="id31">
+<h3>1、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-1">积分管理基本操作</a><a class="headerlink" href="#id31" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id33">
+<h3>2、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-2">监听积分余额变动</a><a class="headerlink" href="#id33" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id35">
+<h3>3、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-3">监听积分订单到账通知</a><a class="headerlink" href="#id35" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id37">
+<h3>4、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-2-4">配置积分到账提醒</a><a class="headerlink" href="#id37" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id39">
+<h3>5、<a class="reference external" href="有米AndroidSDK积分管理及相关功能.html#chap-3">服务器托管积分</a><a class="headerlink" href="#id39" title="永久链接至标题">¶</a></h3>
+</div>
+</div>
+<div class="section" id="sdk">
+<h2>九、SDK 实用工具（可选）<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="id41">
+<h3>1、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-1">检查更新</a><a class="headerlink" href="#id41" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id43">
+<h3>2、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-2">在线配置</a><a class="headerlink" href="#id43" title="永久链接至标题">¶</a></h3>
+</div>
+<div class="section" id="id45">
+<h3>3、<a class="reference external" href="有米AndroidSDK实用工具.html#chap-3">通知栏提示配置开关</a><a class="headerlink" href="#id45" title="永久链接至标题">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">返回顶端</a></p>
+            <p>© Copyright 2018, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('导航 <b class="caret"></b>');
+        $(".admonition-title").html('注意：');
+    </script>
+
+  </body>
+</html>

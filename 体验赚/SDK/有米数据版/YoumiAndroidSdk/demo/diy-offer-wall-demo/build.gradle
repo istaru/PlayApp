@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+	repositories {
+		google()
+		jcenter()
+	}
+
+	dependencies {
+		classpath 'com.android.tools.build:gradle:3.0.1'
+	}
+}
+
+allprojects {
+	repositories {
+		jcenter()
+		maven {
+			url "https://maven.google.com"
+		}
+	}
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: '*.aar')
+	implementation fileTree(dir: 'libs', include: '*.jar')
+
+
+	// ## 关于v4库的引入说明
+	//
+	// 1. 有米Android SDK为了兼容Android N上应用间共享文件（实际功能为启动apk安装界面功能），需要配置v4库中FileProvider
+	// 2. FileProvider位于
+	//   1. 24.2.0之前的v4库
+	//   2. 从24.2.0版本开始，v4库拆分为5个子库，拆分后，FileProvider类位于v4子库的support-core-utils库中
+	//
+	// ## 嵌入结论
+	//
+	// 1. 如果您的应用不需要兼容到Android 7.0以上系统，那么在使用有米Android SDK的时候，不用引入v4库
+	// 2. 如果您的应用需要兼容到Android 7.0以上系统，那么在使用有米Android SDK的时候，还需要依赖：
+	//   * 24.2.0 版本之下的整个v4库 e.g.
+	//      + compile 'com.android.support:support-v4:24.0.0'
+	//   * 或者24.2.0 版本以上的最起码依赖v4的子库support-core-utils（如果你觉着这里比较难理解，也可以直接引入v4整个库） e.g.
+	//      + compile 'com.android.support:support-core-utils:24.2.0' or
+	//      + compile 'com.android.support:support-v4:24.2.0'
+
+	// 说明：demo中因为还用到v4库中的FragmentActivity(用于兼容Android 6.0以上系统的运行时权限申请)，因此这里就依赖一个完整的v4库
+
+	implementation 'com.android.support:support-v4:27.1.0'
+	implementation 'com.android.support:appcompat-v7:27.1.0'
+	implementation 'com.google.android.gms:play-services-base:11.8.0'
+
+	implementation 'com.github.bumptech.glide:glide:4.7.1'
+	annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+}
+
+android {
+	compileSdkVersion 27
+
+	compileOptions {
+		encoding "UTF-8"
+	}
+
+	defaultConfig {
+		//设置支持的 SO 库构架
+		//		ndk {
+		//			abiFilters 'armeabi'//, 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+		//		}
+	}
+
+	sourceSets {
+		main {
+			manifest.srcFile 'AndroidManifest.xml'
+			java.srcDirs = ['src']
+			resources.srcDirs = ['src']
+			aidl.srcDirs = ['src']
+			renderscript.srcDirs = ['src']
+			res.srcDirs = ['res']
+			assets.srcDirs = ['assets']
+			jniLibs.srcDirs = ['libs']
+		}
+		instrumentTest.setRoot('tests')
+		debug.setRoot('build-types/debug')
+		release.setRoot('build-types/release')
+	}
+
+	signingConfigs {
+		releaseConfig {
+			storeFile file("YoumiKeyStore.keystore")
+			storePassword "youmisdk"
+			keyAlias "youmiandroidsdk"
+			keyPassword "youmisdk"
+		}
+	}
+
+
+	buildTypes {
+		release {
+			buildConfigField "boolean", "ISDEBUG", "false"
+			signingConfig signingConfigs.releaseConfig
+			debuggable true
+			zipAlignEnabled true
+			minifyEnabled true
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+			/*
+             *  As of 2016-11-01, shrinkResources does not yet work with useJack=true
+			 *  ps: android studio 2.2之后开启可能会引起一些错误（ 如: 'resourceFile' does not exist)
+		     */
+			// shrinkResources true    // 去除无效的资源文件(依赖于minifyEnabled 为true)
+		}
+
+		debug {
+			buildConfigField "boolean", "ISDEBUG", "true"
+			debuggable true
+			signingConfig signingConfigs.releaseConfig
+
+		}
+	}
+
+	applicationVariants.all { variant ->
+		variant.outputs.all {
+			outputFileName =
+				"YoumiDiyOfferDemo_${variant.buildType.name}_${variant.versionName}_${new Date().format('yyyy-MM-dd')}.apk"
+		}
+	}
+}
+
+

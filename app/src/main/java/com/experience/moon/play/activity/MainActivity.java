@@ -7,10 +7,6 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 
-//import com.alibaba.android.arouter.facade.annotation.Autowired;
-//import com.alibaba.android.arouter.facade.annotation.Route;
-//import com.alibaba.android.arouter.launcher.ARouter;
-import com.alibaba.fastjson.JSONObject;
 import com.experience.moon.play.R;
 import com.experience.moon.play.params.PhoneInfo;
 import com.experience.moon.play.params.request.FirstReqDto;
@@ -19,10 +15,8 @@ import com.experience.moon.play.params.response.ResSubscriber;
 import com.experience.moon.play.ports.ApiService;
 import com.experience.moon.play.tools.JsUtils;
 import com.moon.lib.request.HttpClient;
-import com.moon.lib.request.response.BaseResDto;
 import com.moon.lib.request.response.Transformer;
 import com.moon.lib.tools.Constants;
-import com.moon.lib.tools.LogUtils;
 import com.moon.lib.tools.PrefShared;
 import com.moon.lib.view.web.X5WebView;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -33,6 +27,7 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import butterknife.BindColor;
 import butterknife.BindView;
+import cde.ewd.adw.os.df.DiyOfferWallManager;
 import io.reactivex.functions.Consumer;
 
 //@Route(path = "/activity/MainActivity")
@@ -66,6 +61,11 @@ public class MainActivity extends BaseActivity implements OnRefreshLoadMoreListe
         refreshLayout.setEnableRefresh(false);
         refreshLayout.setEnableLoadMore(false);
         webView.addJavascriptInterface(new JsUtils(MainActivity.this, webView), "native_android");
+        initYouMiData();
+    }
+
+    private void initYouMiData() {
+        DiyOfferWallManager.getInstance(mContext).onAppLaunch();
     }
 
     /**
@@ -193,5 +193,11 @@ public class MainActivity extends BaseActivity implements OnRefreshLoadMoreListe
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DiyOfferWallManager.getInstance(mContext).onAppExit();
     }
 }

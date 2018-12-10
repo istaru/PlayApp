@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>有米 Android SDK 通用基本配置开发者文档 &#8212; Youmi Android SDK Document v8.3.0 文档</title>
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-3.3.6/css/bootstrap-theme.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/youmi.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     'v8.3.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><img src="_static/logo.png">
+          有米广告 Android SDK 文档</a>
+        <span class="navbar-text navbar-version pull-left"><b>v8.3.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="有米AndroidSDK积分管理及相关功能.html">积分管理及相关功能</a></li>
+                <li><a href="有米AndroidSDK实用工具.html">实用工具</a></li>
+                <li><a href="有米AndroidSDK常见问题.html">常见问题</a></li>
+                <li><a href="changelog.html">更新说明</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+              
+                
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">有米 Android SDK 通用基本配置开发者文档</a><ul>
+<li><a class="reference internal" href="#id1">一、基本配置</a><ul>
+<li><a class="reference internal" href="#sdk">1、导入 SDK</a></li>
+<li><a class="reference internal" href="#chap-1-2">2、添加依赖</a></li>
+<li><a class="reference internal" href="#so">3、指定支持的so架构</a></li>
+<li><a class="reference internal" href="#chap-cn-1-4">4、编译打包</a></li>
+<li><a class="reference internal" href="#chap-cn-1-5">5、初始化应用信息</a></li>
+<li><a class="reference internal" href="#chap-1-6">6、设置渠道号（可选）</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id11">二、无积分广告代码集成</a></li>
+<li><a class="reference internal" href="#id13">三、积分墙代码集成</a></li>
+<li><a class="reference internal" href="#id16">四、加粉代码集成</a></li>
+<li><a class="reference internal" href="#id18">五、积分管理及相关功能（重要）</a></li>
+<li><a class="reference internal" href="#id20">六、SDK 实用工具（可选）</a></li>
+<li><a class="reference internal" href="#id22">七、 有米 Android SDK 常见问题</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="android-sdk">
+<h1>有米 Android SDK 通用基本配置开发者文档<a class="headerlink" href="#android-sdk" title="永久链接至标题">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p>欢迎您使用有米广告 SDK，为了保证能正常接收有米的广告，保障各位开发者的收益，请您严格按照 SDK 里 doc 文件夹下的文档步骤来嵌入 SDK ，或按照 SDK 里的 demo 源码来嵌入。</p>
+<p>以下注意事项，请仔细阅读：</p>
+<ol class="last arabic simple">
+<li>在有米后台创建应用获取发布 ID 和应用密钥时，请注意区分好 Android 和 iOS 平台，不能弄错平台。</li>
+<li>一对 ID 和应用密钥只能用在一个应用内，不能重复用在多个应用内，否则会拿不到正式广告。</li>
+<li>嵌入完 SDK，可以拿到测试广告，测试没问题，需上传应用给有米审核，审核通过后才能拿到正式广告，正式广告才能产生收益。</li>
+<li>有米广告不支持模拟器，测试广告时请用真机来测试，另外，Android 广告不支持 Android 平板，需要用手机来测试 Android 广告。</li>
+<li>应用 <code class="docutils literal"><span class="pre">提交市场审核前</span></code> 请注意：不要在界面或代码中出现类似 <strong>ym</strong>, <strong>youmi</strong>, <strong>ad</strong> 等与有米或者广告相关的字眼；记得隐藏广告以及广告入口；打包应用时开启混淆相关配置。</li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h2>一、基本配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="sdk">
+<span id="chap-1-1"></span><h3>1、导入 SDK<a class="headerlink" href="#sdk" title="永久链接至标题">¶</a></h3>
+<p>将 sdk 解压后的 <strong>libs</strong> 目录下的 <code class="docutils literal"><span class="pre">YoumiSdk_*.aar</span></code> 文件导入到工程指定的 <strong>libs</strong> 目录</p>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p><strong>PS</strong> :</p>
+<p>你可能注意到sdk解压后还存在一个 <code class="docutils literal"><span class="pre">extralibs</span></code> 目录，该目录存放我们和其他第三方厂商合作所需要用到的扩展jar，属于 <strong>可选导入的jar</strong> ，只有你用到某些功能的时候，才需要导入，<strong>在你使用该功能的时候，该功能的文档会说明需要引入哪一个jar</strong></p>
+<p><em>e.g</em> :</p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">miadtracker.jar</span></code> : 小米游戏中心渠道统计sdk，当你的 <a class="reference external" href="#chap-1-6">应用/游戏需要发布到小米游戏中心</a> 的时候，还需要导入本jar到你的工程项目的 <strong>libs</strong> 目录中</li>
+</ul>
+</div>
+</div>
+<div class="section" id="chap-1-2">
+<span id="id3"></span><h3>2、添加依赖<a class="headerlink" href="#chap-1-2" title="永久链接至标题">¶</a></h3>
+<p>在应用的 <code class="docutils literal"><span class="pre">build.gradle</span></code> 中添加以下配置：</p>
+<p>如果你使用 <strong>Android Gradle Plugin 3.0.0 以上版本</strong>，建议使用下面的方法引入 AAR：</p>
+<div class="highlight-gradle"><div class="highlight"><pre><span></span>dependencies {
+    implementation fileTree(dir: &#39;libs&#39;, include: [&#39;*.aar&#39;])
+}
+</pre></div>
+</div>
+<p>如果你使用 <strong>Android Gradle Plugin 3.0.0 以下版本</strong>，请使用下面的方法引入 AAR：</p>
+<div class="highlight-gradle"><div class="highlight"><pre><span></span>repositories {
+    flatDir {
+        dirs &#39;libs&#39;
+    }
+}
+
+dependencies {
+    // name 为上一步导入 SDK 中导入到工程的 AAR 文件名去除文件后缀的字符串。
+    // 比如上一步导入 SDK 中导入到工程的 AAR 文件名为 YoumiSdk_v7.2.1_2017-05-04.aar，
+    // 那么这里应该这样配置 compile name: &#39;YoumiSdk_v7.2.1_2017-05-04&#39;, ext: &#39;aar&#39;
+    compile(name: &#39;YoumiSdk_*&#39;, ext: &#39;aar&#39;)
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="so">
+<span id="chap-cn-1-3"></span><h3>3、指定支持的so架构<a class="headerlink" href="#so" title="永久链接至标题">¶</a></h3>
+<p>在应用的 <code class="docutils literal"><span class="pre">build.gradle</span></code> 中指定应用支持的so架构类型，开发者根据自身产品实际情况，酌情处理</p>
+<p>如：下方表示只支持 <code class="docutils literal"><span class="pre">armeabi</span></code> 架构</p>
+<div class="highlight-gradle"><div class="highlight"><pre><span></span>android {
+    defaultConfig {
+        // 指定支持的so架构
+        ndk {
+            abiFilters &#39;armeabi&#39;//, &#39;armeabi-v7a&#39;, &#39;arm64-v8a&#39;, &#39;x86&#39;, &#39;x86_64&#39;, &#39;mips&#39;, &#39;mips64&#39;
+        }
+    }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="chap-cn-1-4">
+<span id="id4"></span><h3>4、编译打包<a class="headerlink" href="#chap-cn-1-4" title="永久链接至标题">¶</a></h3>
+<p>在应用的 <code class="docutils literal"><span class="pre">build.gradle</span></code> 中指定编译SDK版本为 <strong>24</strong> 以上（包括24）</p>
+<div class="highlight-gradle"><div class="highlight"><pre><span></span>android {
+    compileSdkVersion 24
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="chap-cn-1-5">
+<span id="id5"></span><h3>5、初始化应用信息<a class="headerlink" href="#chap-cn-1-5" title="永久链接至标题">¶</a></h3>
+<p>请务必在应用第一个 Activity（启动的第一个类）的 onCreate 中调用以下代码</p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cde.ewd.adw.AdManager</span><span class="o">;</span>
+<span class="o">...</span>
+<span class="n">AdManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">).</span><span class="na">init</span><span class="o">(</span><span class="n">String</span> <span class="n">appId</span><span class="o">,</span> <span class="n">String</span> <span class="n">appSecret</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">isEnableYoumiLog</span><span class="o">);</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p><strong>参数说明：</strong></p>
+<ul class="last simple">
+<li><code class="docutils literal"><span class="pre">appId</span></code> 和 <code class="docutils literal"><span class="pre">appSecret</span></code> 分别为应用的发布 ID 和密钥，由有米后台自动生成，通过在有米后台 &gt; <a class="reference external" href="https://app.youmi.net/apps/view">应用详细信息</a>  可以获得。</li>
+<li><code class="docutils literal"><span class="pre">isEnableYoumiLog</span></code>: 是否开启有米的Log输出，默认为开启状态<ul>
+<li>上传到有米主站进行审核时，务必开启有米的Log，这样才能保证通过审核</li>
+<li>审核通过后如需请求测试广告，请到 <a class="reference external" href="https://app.youmi.net/apps/setting">有米后台-应用中心-广告设置-测试设备设置</a> 进行设置</li>
+<li>开发者发布apk到各大市场的时候，强烈建议关闭有米的Log</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="chap-1-6">
+<span id="id8"></span><h3>6、设置渠道号（可选）<a class="headerlink" href="#chap-1-6" title="永久链接至标题">¶</a></h3>
+<p>目前，有米已经与多家应用商店合作，当您发布的目标应用商店有要求您加上有米的渠道号时，您可以按以下操作加入渠道号进行打包，这样可以保证您的应用在该应用商店上顺利审核通过。</p>
+<p>渠道号列表详见 <a class="reference external" href="http://wiki.youmi.net/Wiki/PromotionChannelIDs">有米广告推广渠道号列表</a></p>
+<p>在AndroidManifest.xml中添加以下代码:</p>
+<div class="highlight-xml"><div class="highlight"><pre><span></span><span class="nt">&lt;meta-data</span>
+    <span class="na">android:name=</span><span class="s">&quot;YOUMI_CHANNEL&quot;</span>
+    <span class="na">android:value=</span><span class="s">&quot;这里替换为非负整数的渠道号&quot;</span> <span class="nt">&gt;</span>
+<span class="nt">&lt;/meta-data&gt;</span>
+</pre></div>
+</div>
+<div class="section" id="chap-1-6-1">
+<span id="id10"></span><h4>6.1 小米游戏商店<a class="headerlink" href="#chap-1-6-1" title="永久链接至标题">¶</a></h4>
+<p>有米跟小米游戏商店达成合作，如果你的应用/游戏需要上传发布到小米游戏商店，那么只需要做额外一点工作，就可以保证您的应用能顺利通过小米游戏商店的审核。</p>
+<ol class="arabic simple">
+<li>在 <a class="reference external" href="#chap-1-6">AndroidManifest.xml中填写小米游戏中心的渠道号</a> : <strong>11030</strong></li>
+<li>在你的项目中 <strong>libs</strong> 目录下导入添加我们sdk解压后目录中的小米游戏商店的统计sdk(<code class="docutils literal"><span class="pre">extralibs/miadtracker.jar</span></code>)</li>
+<li>最后，加入该sdk的混淆配置：</li>
+</ol>
+<div class="highlight-xml"><div class="highlight"><pre><span></span>-keep public class com.mi.adtracker.MiAdTracker{ *; }
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">小技巧</p>
+<p class="last">至此，恭喜您已经准备好有米Android SDK的通用基本配置。</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>二、无积分广告代码集成<a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h2>
+<p>点击查看 <a class="reference external" href="有米AndroidSDK无积分广告开发者文档.html">有米 Android SDK 无积分广告开发者文档</a></p>
+</div>
+<div class="section" id="id13">
+<h2>三、积分墙代码集成<a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h2>
+<p>点击查看 <a class="reference external" href="有米AndroidSDK积分墙开发者文档.html">有米 Android SDK 积分墙开发者文档</a> 或 <a class="reference external" href="有米AndroidSDK积分墙开发者文档-源数据版.html">有米 Android SDK 积分墙开发者文档-源数据版</a></p>
+</div>
+<div class="section" id="id16">
+<h2>四、加粉代码集成<a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h2>
+<p>点击查看 <a class="reference external" href="有米AndroidSDK加粉广告开发者文档-源数据版.html">有米 Android SDK 加粉广告开发者文档-源数据版</a></p>
+</div>
+<div class="section" id="id18">
+<h2>五、积分管理及相关功能（重要）<a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h2>
+<p>点击查看 <a class="reference external" href="有米AndroidSDK积分管理及相关功能.html">有米 Android SDK 积分管理及相关功能</a></p>
+</div>
+<div class="section" id="id20">
+<h2>六、SDK 实用工具（可选）<a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h2>
+<p>点击查看 <a class="reference external" href="有米AndroidSDK实用工具.html">有米 Android SDK 实用工具</a></p>
+</div>
+<div class="section" id="id22">
+<h2>七、 有米 Android SDK 常见问题<a class="headerlink" href="#id22" title="永久链接至标题">¶</a></h2>
+<p>点击查看 <a class="reference external" href="有米AndroidSDK常见问题.html">有米 Android SDK 常见问题</a></p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+    <footer class="footer">
+        <div class="container">
+            <p class="pull-right"><a href="#">返回顶端</a></p>
+            <p>© Copyright 2018, Youmi.net</p>
+        </div>
+    </footer>
+    <script>
+        $("#dLabelLocalToc").html('导航 <b class="caret"></b>');
+        $(".admonition-title").html('注意：');
+    </script>
+
+  </body>
+</html>

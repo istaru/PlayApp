@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_status_not_install">#FF0000</color>
+    <color name="app_status_have_extra_task">#BA7134</color>
+    <color name="app_status_update">#004080</color>
+    <color name="app_status_done">#1C4976</color>
+    <color name="app_status_downloading">#1C4226</color>
+    <color name="app_status_already_download">#024569</color>
+    
+    <color name="task_status_cando_icon_bg">#FDBC39</color>
+    <color name="task_status_cando_text_color">#000000</color>
+    <color name="task_status_cannotdo_icon_bg">#E0E0E0</color>
+    <color name="task_status_cannotdo_text_color">#A2A2A2</color>
+    <color name="task_status_complete_icon_bg">#6BBB26</color>
+    <color name="task_status_not_complete_text_color">#BBBBBB</color>
+    <color name="task_status_text_color">#CECFCF</color>
+</resources>

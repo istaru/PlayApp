@@ -55,6 +55,12 @@ public class Constants {
     public static final int CODE_200 = 200;
 
     /**
+     * 第三方的key
+     */
+    public static final String YOUMI_KEY = "9299fb2e52812407";
+    public static final String YOUMI_SECRET = "76d366986b44c43a";
+
+    /**
      * 获取手机唯一标识
      */
     public static String phonId(Context context) {
